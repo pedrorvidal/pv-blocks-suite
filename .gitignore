@@ -1,0 +1,29 @@
+# Dependencies
+/node_modules/
+/vendor/
+
+# Build output
+/build/
+
+# wp-env
+.wp-env.override.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Environment / secrets
+.env
+.env.local
+
+# Logs
+*.log
+npm-debug.log*
+
+# Claude Code (never versioned)
+CLAUDE.md
+.claude/
