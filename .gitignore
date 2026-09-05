@@ -27,3 +27,6 @@ npm-debug.log*
 # Claude Code (never versioned)
 CLAUDE.md
 .claude/
+
+# Local docs / progress tracking (never versioned)
+/docs/
