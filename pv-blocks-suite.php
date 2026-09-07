@@ -15,3 +15,9 @@ declare( strict_types = 1 );
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
+
+define( 'PV_BLOCKS_SUITE_DIR', plugin_dir_path( __FILE__ ) );
+
+require __DIR__ . '/vendor/autoload.php';
+
+\PV\BlocksSuite\Block_Loader::init();
