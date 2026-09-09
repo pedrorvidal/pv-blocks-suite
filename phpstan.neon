@@ -3,6 +3,8 @@ includes:
 
 parameters:
     level: 5
+    bootstrapFiles:
+        - phpstan-bootstrap.php
     paths:
         - pv-blocks-suite.php
         - includes
