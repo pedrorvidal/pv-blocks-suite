@@ -3,12 +3,22 @@
     "version": "0.1.0",
     "description": "A set of Gutenberg blocks to streamline content creation.",
     "scripts": {
+        "build": "wp-scripts build",
+        "start": "wp-scripts start",
         "env:start": "wp-env start",
         "env:start:tests": "wp-env start --config .wp-env.tests.json",
         "env:stop": "wp-env stop",
         "env:stop:tests": "wp-env stop --config .wp-env.tests.json",
         "env:destroy": "wp-env destroy",
         "env:destroy:tests": "wp-env destroy --config .wp-env.tests.json"
+    },
+    "devDependencies": {
+        "@wordpress/block-editor": "^17.1.0",
+        "@wordpress/blocks": "^16.0.0",
+        "@wordpress/components": "^40.1.0",
+        "@wordpress/element": "^8.7.0",
+        "@wordpress/i18n": "^6.28.0",
+        "@wordpress/scripts": "^30.11.0"
     },
     "license": "GPL-2.0-or-later"
 }

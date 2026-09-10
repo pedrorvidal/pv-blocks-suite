@@ -16,8 +16,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+// Absolute path to the plugin root, trailing slash included.
 define( 'PV_BLOCKS_SUITE_DIR', plugin_dir_path( __FILE__ ) );
 
-require __DIR__ . '/vendor/autoload.php';
+require_once PV_BLOCKS_SUITE_DIR . 'includes/class-block-loader.php';
 
 \PV\BlocksSuite\Block_Loader::init();
