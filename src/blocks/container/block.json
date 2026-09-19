@@ -2,7 +2,7 @@
     "$schema": "https://schemas.wp.org/trunk/block.json",
     "apiVersion": 3,
     "name": "pv-blocks-suite/container",
-    "title": "Container",
+    "title": "PV Container",
     "category": "design",
     "icon": "cover-image",
     "description": "Reusable wrapper block with padding, background, and max-width controls. Other blocks (CTA, testimonials, stats) can be nested inside it.",
