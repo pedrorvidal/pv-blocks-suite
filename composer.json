@@ -12,8 +12,10 @@
         "php": ">=8.2"
     },
     "require-dev": {
+        "dealerdirect/phpcodesniffer-composer-installer": "*",
         "phpstan/phpstan": "^2.2",
-        "szepeviktor/phpstan-wordpress": "^2.0"
+        "szepeviktor/phpstan-wordpress": "^2.0",
+        "wp-coding-standards/wpcs": "*"
     },
     "autoload": {
         "psr-4": {
@@ -24,7 +26,10 @@
         ]
     },
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
     },
     "minimum-stability": "stable"
 }
