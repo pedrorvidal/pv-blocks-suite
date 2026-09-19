@@ -17,15 +17,7 @@ import {
 } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-interface ContainerAttributes {
-    paddingTop: string;
-    paddingBottom: string;
-    paddingLeft: string;
-    paddingRight: string;
-    backgroundColor: string;
-    backgroundImage: string;
-    maxWidth: string;
-}
+import type { ContainerAttributes } from './types';
 
 interface MediaUploadSelection {
     url: string;
