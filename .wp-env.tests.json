@@ -6,5 +6,6 @@
         "WP_DEBUG": false,
         "SCRIPT_DEBUG": false
     },
-    "port": 8889
+    "port": 8889,
+    "testsEnvironment": false
 }

@@ -9,3 +9,10 @@ parameters:
         - pv-blocks-suite.php
         - includes
         - src
+    excludePaths:
+        # PHPUnit test classes extend WP_UnitTestCase, which wp-phpunit
+        # only makes available at test runtime (required directly by
+        # tests/bootstrap.php, not autoloaded) — PHPStan can't see it via
+        # static analysis. Correctness for these is verified by actually
+        # running them (`npm run test:php`), not by PHPStan.
+        - src/*/*/test/*Test.php

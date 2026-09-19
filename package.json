@@ -15,7 +15,8 @@
         "test:js": "wp-scripts test-unit-js",
         "lint:php": "./vendor/bin/phpcs",
         "lint:php:fix": "./vendor/bin/phpcbf",
-        "lint:php:stan": "./vendor/bin/phpstan analyse"
+        "lint:php:stan": "./vendor/bin/phpstan analyse",
+        "test:php": "wp-env run cli --config .wp-env.tests.json --env-cwd=wp-content/plugins/pv-blocks-suite -- vendor/bin/phpunit"
     },
     "devDependencies": {
         "@testing-library/jest-dom": "^6.10.0",
