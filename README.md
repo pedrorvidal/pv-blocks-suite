@@ -118,7 +118,8 @@ pv-blocks-suite/
 ├── .wp-env.json             # Development environment (port 8888)
 ├── .wp-env.tests.json       # Test environment (port 8889)
 ├── includes/
-│   └── class-block-loader.php   # Auto-registers blocks from src/blocks/*/block.json
+│   ├── class-block-loader.php     # Auto-registers blocks from src/blocks/*/block.json
+│   └── class-block-categories.php # Registers the "PV Blocks Suite" inserter category
 ├── src/
 │   ├── blocks/
 │   │   └── {block-name}/
