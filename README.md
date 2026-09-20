@@ -44,6 +44,19 @@ A call-to-action block for driving a single, focused action.
 - Native padding and border-radius controls, with automatic content
   clipping (`overflow: hidden`) whenever a radius is applied
 
+### PV Accordion
+
+A list of collapsible items, ideal for FAQs.
+
+- Any number of items, added, reordered, duplicated, or removed through
+  the standard block toolbar
+- Each item's panel accepts real nested blocks (paragraphs, images,
+  lists, …), not just plain text
+- Built on native HTML `<details>`/`<summary>` — accessible and
+  JavaScript-free
+- Optional "only one item open at a time" behavior
+- Per-item "open by default" control
+
 ## Requirements
 
 - PHP 8.2 or later
