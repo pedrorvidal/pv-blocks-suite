@@ -54,6 +54,8 @@ A list of collapsible items, ideal for FAQs.
   lists, …), not just plain text
 - Built on native HTML `<details>`/`<summary>` — accessible and
   JavaScript-free
+- Smooth open/close height animation and a rotating caret indicator,
+  both pure CSS
 - Optional "only one item open at a time" behavior
 - Per-item "open by default" control
 

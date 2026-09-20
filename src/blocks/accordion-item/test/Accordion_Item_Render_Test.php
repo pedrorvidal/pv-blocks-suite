@@ -49,6 +49,19 @@ final class Accordion_Item_Render_Test extends WP_UnitTestCase {
 		$this->assertStringContainsString( '<p>The answer.</p>', $output );
 	}
 
+	public function test_panel_content_is_wrapped_for_the_css_open_close_animation(): void {
+		$output = $this->render_item( [], '<p>The answer.</p>' );
+
+		// The extra `__content-inner` wrapper (and its parent
+		// `__content`) is what the CSS grid-row animation in
+		// style.scss animates between 0fr and 1fr — without it, the
+		// content couldn't be collapsed to a single animatable row.
+		$this->assertMatchesRegularExpression(
+			'/<div class="wp-block-pv-blocks-suite-accordion-item__content">\s*<div class="wp-block-pv-blocks-suite-accordion-item__content-inner">\s*<p>The answer\.<\/p>/',
+			$output
+		);
+	}
+
 	public function test_open_attribute_is_present_when_open_by_default(): void {
 		$output = $this->render_item( [ 'openByDefault' => true ] );
 

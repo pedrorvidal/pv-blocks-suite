@@ -12,10 +12,20 @@
         font-weight: 600;
         list-style: none;
 
+        // Browsers disagree on how a <summary> marker is hidden — cover
+        // all three so no default triangle/"+" sneaks through and fights
+        // the custom caret below.
+        &::marker {
+            display: none;
+        }
+
         &::-webkit-details-marker {
             display: none;
         }
 
+        // A caret, drawn from two rotated borders (the classic CSS-only
+        // chevron trick) rather than an icon asset — points down by
+        // default, flips to point up when the item is open.
         &::after {
             content: '';
             flex-shrink: 0;
@@ -24,15 +34,35 @@
             border-right: 2px solid currentColor;
             border-bottom: 2px solid currentColor;
             transform: rotate(45deg);
-            transition: transform 0.2s ease;
+            transition: transform 0.25s ease;
         }
+    }
+
+    &__content-inner {
+        overflow: hidden;
+        padding: 0 0 1rem;
+    }
+
+    // A higher-specificity descendant selector is used here (not the
+    // `&__content` BEM shorthand, which would only produce a single
+    // compound class) so this rule reliably beats the browser's own
+    // `details:not([open]) > :not(summary) { display: none; }` UA-
+    // stylesheet rule — that default is what makes native <details>
+    // content pop open/closed instantly with nothing to animate.
+    // Keeping it as a `display: grid` row that resizes between `0fr` and
+    // `1fr` lets the height itself transition smoothly, no JavaScript
+    // involved.
+    .wp-block-pv-blocks-suite-accordion-item__content {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: grid-template-rows 0.25s ease;
+    }
+
+    &[open] .wp-block-pv-blocks-suite-accordion-item__content {
+        grid-template-rows: 1fr;
     }
 
     &[open] &__summary::after {
         transform: rotate(-135deg);
-    }
-
-    &__content {
-        padding: 0 0 1rem;
     }
 }

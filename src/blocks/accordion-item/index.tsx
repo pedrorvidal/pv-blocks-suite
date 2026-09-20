@@ -6,6 +6,7 @@ import metadata from './block.json';
 import type { AccordionItemAttributes } from './types';
 
 import './style.scss';
+import './editor.scss';
 
 // TypeScript's `resolveJsonModule` infers plain `string`/`number` for
 // block.json's fields (e.g. `category: string`, not the literal union

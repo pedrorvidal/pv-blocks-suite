@@ -54,7 +54,9 @@ export default function Edit({
                     allowedFormats={[]}
                 />
                 <div className="wp-block-pv-blocks-suite-accordion-item__content">
-                    <InnerBlocks />
+                    <div className="wp-block-pv-blocks-suite-accordion-item__content-inner">
+                        <InnerBlocks />
+                    </div>
                 </div>
             </div>
         </>

@@ -1,0 +1,12 @@
+// The editor renders the item as a plain <div> (see edit.tsx), never a
+// real <details>, so it never gets an [open] attribute — without this
+// override, style.scss's "collapsed by default" grid row would leave the
+// panel content permanently hidden while editing.
+// !important is needed here, not just higher specificity: style.scss's
+// collapsed-by-default rule already uses a two-class descendant selector
+// to beat the browser's own UA stylesheet, and this file's load order
+// relative to it isn't guaranteed, so specificity alone can't be trusted
+// to win.
+.wp-block-pv-blocks-suite-accordion-item__content {
+    grid-template-rows: 1fr !important;
+}

@@ -43,6 +43,8 @@ $wrapper_attributes = get_block_wrapper_attributes( $extra_wrapper_attributes );
 >
 	<summary class="wp-block-pv-blocks-suite-accordion-item__summary"><?php echo wp_kses_post( $summary ); ?></summary>
 	<div class="wp-block-pv-blocks-suite-accordion-item__content">
-		<?php echo $content; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- inner blocks are already rendered/escaped by core. ?>
+		<div class="wp-block-pv-blocks-suite-accordion-item__content-inner">
+			<?php echo $content; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- inner blocks are already rendered/escaped by core. ?>
+		</div>
 	</div>
 </details>
