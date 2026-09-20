@@ -1,0 +1,33 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "pv-blocks-suite/accordion-item",
+    "title": "PV Accordion Item",
+    "category": "design",
+    "icon": "arrow-down-alt2",
+    "description": "A single collapsible item within a PV Accordion block.",
+    "keywords": ["accordion", "faq", "item"],
+    "textdomain": "pv-blocks-suite",
+    "parent": ["pv-blocks-suite/accordion"],
+    "attributes": {
+        "summary": {
+            "type": "string",
+            "default": ""
+        },
+        "openByDefault": {
+            "type": "boolean",
+            "default": false
+        }
+    },
+    "usesContext": [
+        "pv-blocks-suite/accordionGroupId",
+        "pv-blocks-suite/accordionAllowMultipleOpen"
+    ],
+    "supports": {
+        "html": false,
+        "anchor": true
+    },
+    "editorScript": "file:./index.js",
+    "style": "file:./style-index.css",
+    "render": "file:./render.php"
+}

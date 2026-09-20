@@ -1,0 +1,38 @@
+.wp-block-pv-blocks-suite-accordion-item {
+    box-sizing: border-box;
+    border-bottom: 1px solid #e0e0e0;
+
+    &__summary {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.5rem;
+        padding: 1rem 0;
+        cursor: pointer;
+        font-weight: 600;
+        list-style: none;
+
+        &::-webkit-details-marker {
+            display: none;
+        }
+
+        &::after {
+            content: '';
+            flex-shrink: 0;
+            width: 0.5rem;
+            height: 0.5rem;
+            border-right: 2px solid currentColor;
+            border-bottom: 2px solid currentColor;
+            transform: rotate(45deg);
+            transition: transform 0.2s ease;
+        }
+    }
+
+    &[open] &__summary::after {
+        transform: rotate(-135deg);
+    }
+
+    &__content {
+        padding: 0 0 1rem;
+    }
+}
