@@ -49,6 +49,19 @@ final class Accordion_Render_Test extends WP_UnitTestCase {
 		$this->assertStringContainsString( 'wp-block-pv-blocks-suite-accordion', $output );
 	}
 
+	public function test_wrapper_has_role_group_for_assistive_tech(): void {
+		$output = (string) render_block(
+			[
+				'blockName'    => 'pv-blocks-suite/accordion',
+				'attrs'        => [],
+				'innerHTML'    => '',
+				'innerContent' => [],
+			]
+		);
+
+		$this->assertStringContainsString( 'role="group"', $output );
+	}
+
 	/**
 	 * Renders a full accordion with one nested accordion-item, exercising
 	 * the real block-context propagation (providesContext/usesContext)

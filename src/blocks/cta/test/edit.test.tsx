@@ -5,6 +5,7 @@ import type { CtaAttributes } from '../types';
 
 const baseAttributes: CtaAttributes = {
 	heading: '',
+	headingLevel: 2,
 	description: '',
 	buttonText: '',
 	buttonUrl: '',
@@ -115,5 +116,20 @@ describe( 'cta block edit', () => {
 		const wrapper = screen.getByLabelText( 'Add heading…' ).parentElement;
 
 		expect( wrapper?.style.overflow ).toBe( '' );
+	} );
+
+	it( 'renders the heading at the configured level', () => {
+		renderEdit( {
+			...baseAttributes,
+			heading: 'Sign up today',
+			headingLevel: 4,
+		} );
+
+		// RichText sets role="textbox" on itself while editing (matching
+		// core's own Heading block), which overrides the tag's implicit
+		// ARIA role — so the tag name is what's checked here, not
+		// getByRole('heading', ...). The real, role-free heading tag is
+		// what render.php outputs for actual visitors/screen readers.
+		expect( screen.getByText( 'Sign up today' ).tagName ).toBe( 'H4' );
 	} );
 } );

@@ -23,6 +23,7 @@ export interface CtaBlockSupportsStyle {
 
 export interface CtaAttributes {
     heading: string;
+    headingLevel: number;
     description: string;
     buttonText: string;
     buttonUrl: string;

@@ -36,10 +36,13 @@ A reusable wrapper block for composing layout sections.
 
 A call-to-action block for driving a single, focused action.
 
-- Rich-text heading and description with inline formatting (bold, italic)
-- One button with configurable label, URL, and "open in new tab"
+- Rich-text heading (configurable H2–H6 level) and description with
+  inline formatting (bold, italic)
+- One button with configurable label, URL, and "open in new tab" (with a
+  screen-reader announcement for the new-tab behavior)
 - Text alignment control (left, center, right, justify)
-- Independent background and text colors for both the block and the button
+- Independent background and text colors for both the block and the
+  button, with a built-in contrast warning for accessibility
 - Optional background image
 - Native padding and border-radius controls, with automatic content
   clipping (`overflow: hidden`) whenever a radius is applied
@@ -54,6 +57,8 @@ A list of collapsible items, ideal for FAQs.
   lists, …), not just plain text
 - Built on native HTML `<details>`/`<summary>` — accessible and
   JavaScript-free
+- Each question is a real, configurable H2–H6 heading, so screen-reader
+  users can navigate the list by heading
 - Smooth open/close height animation and a rotating caret indicator,
   both pure CSS
 - Optional "only one item open at a time" behavior

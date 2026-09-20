@@ -63,7 +63,11 @@ final class Cta_Render_Test extends WP_UnitTestCase {
 		);
 
 		$this->assertStringContainsString( 'href="https://example.org/signup"', $output );
-		$this->assertStringContainsString( '>Get started</a>', $output );
+		// Not an exact `>Get started</a>` match: the template has a
+		// trailing conditional (the "opens in a new tab" hint) after the
+		// button text, which leaves whitespace between the text and the
+		// closing tag even when that hint isn't rendered.
+		$this->assertMatchesRegularExpression( '/>\s*Get started\s*<\/a>/', $output );
 	}
 
 	public function test_button_is_omitted_when_text_or_url_is_missing(): void {
@@ -217,5 +221,50 @@ final class Cta_Render_Test extends WP_UnitTestCase {
 
 		$this->assertStringContainsString( '<strong>world</strong>', $output );
 		$this->assertStringNotContainsString( '<script>', $output );
+	}
+
+	public function test_heading_level_is_configurable(): void {
+		$output = $this->render_cta(
+			[
+				'heading'      => 'Sign up today',
+				'headingLevel' => 4,
+			]
+		);
+
+		$this->assertStringContainsString( '<h4 class="wp-block-pv-blocks-suite-cta__heading">Sign up today</h4>', $output );
+	}
+
+	public function test_heading_level_is_clamped_to_a_valid_range(): void {
+		$output = $this->render_cta(
+			[
+				'heading'      => 'Sign up today',
+				'headingLevel' => 1,
+			]
+		);
+
+		$this->assertStringContainsString( '<h2 class="wp-block-pv-blocks-suite-cta__heading">Sign up today</h2>', $output );
+	}
+
+	public function test_button_hints_it_opens_in_a_new_tab_for_screen_readers(): void {
+		$output = $this->render_cta(
+			[
+				'buttonText'          => 'Get started',
+				'buttonUrl'           => 'https://example.org/signup',
+				'buttonOpensInNewTab' => true,
+			]
+		);
+
+		$this->assertStringContainsString( '(opens in a new tab)', $output );
+	}
+
+	public function test_new_tab_hint_is_absent_by_default(): void {
+		$output = $this->render_cta(
+			[
+				'buttonText' => 'Get started',
+				'buttonUrl'  => 'https://example.org/signup',
+			]
+		);
+
+		$this->assertStringNotContainsString( 'opens in a new tab', $output );
 	}
 }

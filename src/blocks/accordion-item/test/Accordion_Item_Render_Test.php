@@ -39,8 +39,43 @@ final class Accordion_Item_Render_Test extends WP_UnitTestCase {
 		$output = $this->render_item( [ 'summary' => 'Question' ] );
 
 		$this->assertStringContainsString( '<details', $output );
-		$this->assertStringContainsString( '<summary class="wp-block-pv-blocks-suite-accordion-item__summary">Question</summary>', $output );
+		$this->assertStringContainsString( '<summary class="wp-block-pv-blocks-suite-accordion-item__summary">', $output );
 		$this->assertStringContainsString( '</details>', $output );
+	}
+
+	public function test_question_is_wrapped_in_a_heading_for_screen_readers_and_seo(): void {
+		$output = $this->render_item( [ 'summary' => 'Question' ] );
+
+		// Defaults to h3: a real heading (not just styled text) lets
+		// screen-reader users navigate the FAQ list by heading, and
+		// matches how search engines expect FAQ-style content to be
+		// structured.
+		$this->assertMatchesRegularExpression(
+			'/<summary class="wp-block-pv-blocks-suite-accordion-item__summary">\s*<h3 class="wp-block-pv-blocks-suite-accordion-item__summary-heading">Question<\/h3>\s*<\/summary>/',
+			$output
+		);
+	}
+
+	public function test_heading_level_is_configurable(): void {
+		$output = $this->render_item(
+			[
+				'summary'      => 'Question',
+				'headingLevel' => 5,
+			]
+		);
+
+		$this->assertStringContainsString( '<h5 class="wp-block-pv-blocks-suite-accordion-item__summary-heading">Question</h5>', $output );
+	}
+
+	public function test_heading_level_is_clamped_to_a_valid_range(): void {
+		$output = $this->render_item(
+			[
+				'summary'      => 'Question',
+				'headingLevel' => 99,
+			]
+		);
+
+		$this->assertStringContainsString( '<h6 class="wp-block-pv-blocks-suite-accordion-item__summary-heading">Question</h6>', $output );
 	}
 
 	public function test_panel_content_is_preserved(): void {

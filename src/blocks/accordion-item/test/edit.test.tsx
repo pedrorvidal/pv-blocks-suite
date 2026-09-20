@@ -13,6 +13,7 @@ jest.mock( '@wordpress/block-editor', () => {
 
 const baseAttributes: AccordionItemAttributes = {
 	summary: '',
+	headingLevel: 3,
 	openByDefault: false,
 };
 
@@ -43,5 +44,13 @@ describe( 'accordion-item block edit', () => {
 		expect(
 			screen.getByLabelText( 'Add a question…' )
 		).toBeInTheDocument();
+	} );
+
+	it( 'wraps the question in a heading matching headingLevel', () => {
+		renderEdit( { ...baseAttributes, summary: 'Question text', headingLevel: 4 } );
+
+		const heading = screen.getByRole( 'heading', { level: 4 } );
+
+		expect( heading ).toHaveTextContent( 'Question text' );
 	} );
 } );

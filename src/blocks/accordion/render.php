@@ -15,7 +15,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-$wrapper_attributes = get_block_wrapper_attributes();
+// Mirrors WordPress core's own accordion block: grouping the items under
+// role="group" gives assistive tech a contextual "group of N items"
+// announcement when entering the list, without needing a full landmark.
+$wrapper_attributes = get_block_wrapper_attributes( [ 'role' => 'group' ] );
 ?>
 <div <?php echo $wrapper_attributes; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped by get_block_wrapper_attributes(). ?>>
 	<?php echo $content; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- inner blocks (accordion items) are already rendered/escaped by their own render.php. ?>

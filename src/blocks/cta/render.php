@@ -16,6 +16,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $heading                 = (string) ( $attributes['heading'] ?? '' );
+$heading_level           = (int) ( $attributes['headingLevel'] ?? 2 );
+$heading_level           = max( 2, min( 6, $heading_level ) );
 $description             = (string) ( $attributes['description'] ?? '' );
 $button_text             = (string) ( $attributes['buttonText'] ?? '' );
 $button_url              = (string) ( $attributes['buttonUrl'] ?? '' );
@@ -103,7 +105,7 @@ $button_style_attr = safecss_filter_attr( $button_style_attr );
 ?>
 <div <?php echo $wrapper_attributes; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped by get_block_wrapper_attributes(). ?>>
 	<?php if ( $heading ) : ?>
-		<h2 class="wp-block-pv-blocks-suite-cta__heading"><?php echo wp_kses_post( $heading ); ?></h2>
+		<h<?php echo absint( $heading_level ); ?> class="wp-block-pv-blocks-suite-cta__heading"><?php echo wp_kses_post( $heading ); ?></h<?php echo absint( $heading_level ); ?>>
 	<?php endif; ?>
 
 	<?php if ( $description ) : ?>
@@ -120,6 +122,10 @@ $button_style_attr = safecss_filter_attr( $button_style_attr );
 			<?php if ( $button_opens_in_new_tab ) : ?>
 				target="_blank" rel="noopener noreferrer"
 			<?php endif; ?>
-		><?php echo wp_kses_post( $button_text ); ?></a>
+		><?php echo wp_kses_post( $button_text ); ?>
+			<?php if ( $button_opens_in_new_tab ) : ?>
+				<span class="wp-block-pv-blocks-suite-cta__visually-hidden"><?php esc_html_e( '(opens in a new tab)', 'pv-blocks-suite' ); ?></span>
+			<?php endif; ?>
+		</a>
 	<?php endif; ?>
 </div>

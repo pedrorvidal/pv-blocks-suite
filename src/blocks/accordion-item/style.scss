@@ -11,6 +11,16 @@
         cursor: pointer;
         font-weight: 600;
         list-style: none;
+        outline: none;
+
+        // outline is suppressed above and reinstated here, scoped to
+        // :focus-visible only, so a mouse click doesn't show a focus ring
+        // but keyboard (Tab) navigation still gets a clearly visible one —
+        // removing it outright would fail WCAG 2.4.7 (Focus Visible).
+        &:focus-visible {
+            outline: 2px solid currentColor;
+            outline-offset: 2px;
+        }
 
         // Browsers disagree on how a <summary> marker is hidden — cover
         // all three so no default triangle/"+" sneaks through and fights
@@ -36,6 +46,15 @@
             transform: rotate(45deg);
             transition: transform 0.25s ease;
         }
+    }
+
+    // Browsers apply their own margin/font-size to heading elements —
+    // reset them here so wrapping the question text in a real <h2>-<h6>
+    // (for screen-reader/SEO navigation) doesn't change how it looks;
+    // visual weight/size still comes from `&__summary` above.
+    &__summary-heading {
+        margin: 0;
+        font: inherit;
     }
 
     &__content-inner {

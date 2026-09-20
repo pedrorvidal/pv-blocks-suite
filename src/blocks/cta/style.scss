@@ -17,5 +17,31 @@
         color: #fff;
         text-decoration: none;
         cursor: pointer;
+        outline: none;
+
+        // outline is suppressed above and reinstated here, scoped to
+        // :focus-visible only, so a mouse click doesn't show a focus ring
+        // but keyboard (Tab) navigation still gets a clearly visible one —
+        // removing it outright would fail WCAG 2.4.7 (Focus Visible).
+        &:focus-visible {
+            outline: 2px solid currentColor;
+            outline-offset: 2px;
+        }
+    }
+
+    // Standard visually-hidden technique: content stays in the accessible-
+    // name/DOM for screen readers but is clipped to 1px and removed from
+    // visual flow. Not reusing a theme's `.screen-reader-text` since we
+    // can't guarantee every theme defines it.
+    &__visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
     }
 }

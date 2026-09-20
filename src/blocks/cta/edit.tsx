@@ -4,8 +4,10 @@ import {
     InspectorControls,
     BlockControls,
     AlignmentControl,
+    HeadingLevelDropdown,
     RichText,
     PanelColorSettings,
+    ContrastChecker,
     MediaUpload,
     MediaUploadCheck,
 } from '@wordpress/block-editor';
@@ -46,6 +48,7 @@ export default function Edit({
 }: BlockEditProps<CtaAttributes>) {
     const {
         heading,
+        headingLevel,
         description,
         buttonText,
         buttonUrl,
@@ -81,6 +84,13 @@ export default function Edit({
                     value={textAlign}
                     onChange={(value?: string) =>
                         setAttributes({ textAlign: value ?? 'center' })
+                    }
+                />
+                <HeadingLevelDropdown
+                    value={headingLevel}
+                    options={[2, 3, 4, 5, 6]}
+                    onChange={(level: number) =>
+                        setAttributes({ headingLevel: level })
                     }
                 />
             </BlockControls>
@@ -153,7 +163,16 @@ export default function Edit({
                             label: __('Button text color', 'pv-blocks-suite'),
                         },
                     ]}
-                />
+                >
+                    <ContrastChecker
+                        backgroundColor={backgroundColor}
+                        textColor={textColor}
+                    />
+                    <ContrastChecker
+                        backgroundColor={buttonBackgroundColor}
+                        textColor={buttonTextColor}
+                    />
+                </PanelColorSettings>
 
                 <PanelBody title={__('Button', 'pv-blocks-suite')}>
                     <TextControl
@@ -176,7 +195,7 @@ export default function Edit({
 
             <div {...blockProps}>
                 <RichText
-                    tagName="h2"
+                    tagName={`h${headingLevel}`}
                     className="wp-block-pv-blocks-suite-cta__heading"
                     value={heading}
                     onChange={(value: string) =>

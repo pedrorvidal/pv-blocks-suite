@@ -16,6 +16,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $summary             = (string) ( $attributes['summary'] ?? '' );
+$heading_level       = (int) ( $attributes['headingLevel'] ?? 3 );
+$heading_level       = max( 2, min( 6, $heading_level ) );
 $open_by_default     = (bool) ( $attributes['openByDefault'] ?? false );
 $group_id            = (string) ( $block->context['pv-blocks-suite/accordionGroupId'] ?? '' );
 $allow_multiple_open = (bool) ( $block->context['pv-blocks-suite/accordionAllowMultipleOpen'] ?? false );
@@ -41,7 +43,9 @@ $wrapper_attributes = get_block_wrapper_attributes( $extra_wrapper_attributes );
 		open
 	<?php endif; ?>
 >
-	<summary class="wp-block-pv-blocks-suite-accordion-item__summary"><?php echo wp_kses_post( $summary ); ?></summary>
+	<summary class="wp-block-pv-blocks-suite-accordion-item__summary">
+		<h<?php echo absint( $heading_level ); ?> class="wp-block-pv-blocks-suite-accordion-item__summary-heading"><?php echo wp_kses_post( $summary ); ?></h<?php echo absint( $heading_level ); ?>>
+	</summary>
 	<div class="wp-block-pv-blocks-suite-accordion-item__content">
 		<div class="wp-block-pv-blocks-suite-accordion-item__content-inner">
 			<?php echo $content; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- inner blocks are already rendered/escaped by core. ?>
