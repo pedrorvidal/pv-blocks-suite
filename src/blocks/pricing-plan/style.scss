@@ -68,6 +68,30 @@
         text-decoration: none;
         cursor: pointer;
         outline: none;
+        transition:
+            opacity 0.2s ease,
+            transform 0.2s ease;
+
+        // Opacity + a small lift work as hover feedback regardless of
+        // whatever background color the user picks — no risk of the
+        // effect clashing with or disappearing into a specific color,
+        // unlike e.g. a fixed darken/lighten overlay would.
+        &:hover {
+            opacity: 0.85;
+            transform: translateY(-1px);
+        }
+
+        &:active {
+            transform: translateY(0);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            transition: opacity 0.2s ease;
+
+            &:hover {
+                transform: none;
+            }
+        }
 
         // outline is suppressed above and reinstated here, scoped to
         // :focus-visible only, so a mouse click doesn't show a focus ring
