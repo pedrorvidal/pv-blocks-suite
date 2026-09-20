@@ -1,0 +1,66 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "pv-blocks-suite/cta",
+    "title": "PV CTA",
+    "category": "design",
+    "icon": "megaphone",
+    "description": "Call-to-action block with heading, description, and a button.",
+    "keywords": ["cta", "call to action", "button"],
+    "textdomain": "pv-blocks-suite",
+    "attributes": {
+        "heading": {
+            "type": "string",
+            "default": ""
+        },
+        "description": {
+            "type": "string",
+            "default": ""
+        },
+        "buttonText": {
+            "type": "string",
+            "default": ""
+        },
+        "buttonUrl": {
+            "type": "string",
+            "default": ""
+        },
+        "buttonOpensInNewTab": {
+            "type": "boolean",
+            "default": false
+        },
+        "textAlign": {
+            "type": "string",
+            "default": "center"
+        },
+        "backgroundColor": {
+            "type": "string",
+            "default": ""
+        },
+        "backgroundImage": {
+            "type": "string",
+            "default": ""
+        },
+        "textColor": {
+            "type": "string",
+            "default": ""
+        },
+        "buttonBackgroundColor": {
+            "type": "string",
+            "default": ""
+        },
+        "buttonTextColor": {
+            "type": "string",
+            "default": ""
+        }
+    },
+    "supports": {
+        "align": ["wide", "full"],
+        "html": false,
+        "anchor": true
+    },
+    "editorScript": "file:./index.js",
+    "editorStyle": "file:./index.css",
+    "style": "file:./style-index.css",
+    "render": "file:./render.php"
+}

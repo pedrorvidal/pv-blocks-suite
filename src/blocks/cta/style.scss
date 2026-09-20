@@ -1,0 +1,21 @@
+.wp-block-pv-blocks-suite-cta {
+    box-sizing: border-box;
+
+    &__heading {
+        margin: 0 0 0.5rem;
+    }
+
+    &__description {
+        margin: 0 0 1rem;
+    }
+
+    &__button {
+        display: inline-block;
+        padding: 0.75rem 1.5rem;
+        border-radius: 4px;
+        background-color: #1e1e1e;
+        color: #fff;
+        text-decoration: none;
+        cursor: pointer;
+    }
+}
