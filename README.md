@@ -72,6 +72,21 @@ A list of collapsible items, ideal for FAQs.
 - Optional "only one item open at a time" behavior
 - Per-item "open by default" control
 
+### Pricing Table
+
+A row of pricing cards for comparing plans.
+
+- Any number of plans, added, reordered, duplicated, or removed through
+  the standard block toolbar
+- Each plan: name (configurable H2–H6 heading), price with an optional
+  period (e.g. "/month"), a short description, and a button (URL,
+  "open in new tab" with a screen-reader announcement)
+- The feature list is real `InnerBlocks` — defaults to a native list,
+  editable like any other WordPress list
+- "Featured plan" highlight (border/shadow) with a customizable badge
+  label
+- Native padding and border-radius controls
+
 ## Requirements
 
 - PHP 8.2 or later

@@ -1,0 +1,68 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "pv-blocks-suite/pricing-table",
+    "title": "Pricing Table",
+    "category": "pv-blocks-suite",
+    "icon": "money-alt",
+    "description": "A row of pricing cards for comparing plans.",
+    "keywords": ["pricing", "plans", "comparison", "cards"],
+    "textdomain": "pv-blocks-suite",
+    "attributes": {},
+    "example": {
+        "innerBlocks": [
+            {
+                "name": "pv-blocks-suite/pricing-plan",
+                "attributes": {
+                    "planName": "Basic",
+                    "price": "$9",
+                    "pricePeriod": "/month",
+                    "description": "For individuals getting started.",
+                    "buttonText": "Choose Basic",
+                    "buttonUrl": "#"
+                },
+                "innerBlocks": [
+                    {
+                        "name": "core/list",
+                        "attributes": {},
+                        "innerBlocks": [
+                            { "name": "core/list-item", "attributes": { "content": "1 project" } },
+                            { "name": "core/list-item", "attributes": { "content": "Community support" } }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "pv-blocks-suite/pricing-plan",
+                "attributes": {
+                    "planName": "Pro",
+                    "price": "$29",
+                    "pricePeriod": "/month",
+                    "description": "For growing teams.",
+                    "buttonText": "Choose Pro",
+                    "buttonUrl": "#",
+                    "isFeatured": true,
+                    "featuredLabel": "Most Popular"
+                },
+                "innerBlocks": [
+                    {
+                        "name": "core/list",
+                        "attributes": {},
+                        "innerBlocks": [
+                            { "name": "core/list-item", "attributes": { "content": "Unlimited projects" } },
+                            { "name": "core/list-item", "attributes": { "content": "Priority support" } }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "supports": {
+        "align": ["wide", "full"],
+        "html": false,
+        "anchor": true
+    },
+    "editorScript": "file:./index.js",
+    "style": "file:./style-index.css",
+    "render": "file:./render.php"
+}

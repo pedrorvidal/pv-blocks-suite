@@ -1,0 +1,94 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "pv-blocks-suite/pricing-plan",
+    "title": "Pricing Plan",
+    "category": "pv-blocks-suite",
+    "icon": "tag",
+    "description": "A single pricing card within a Pricing Table block.",
+    "keywords": ["pricing", "plan", "card"],
+    "textdomain": "pv-blocks-suite",
+    "parent": ["pv-blocks-suite/pricing-table"],
+    "attributes": {
+        "planName": {
+            "type": "string",
+            "default": ""
+        },
+        "headingLevel": {
+            "type": "number",
+            "default": 3
+        },
+        "price": {
+            "type": "string",
+            "default": ""
+        },
+        "pricePeriod": {
+            "type": "string",
+            "default": ""
+        },
+        "description": {
+            "type": "string",
+            "default": ""
+        },
+        "buttonText": {
+            "type": "string",
+            "default": ""
+        },
+        "buttonUrl": {
+            "type": "string",
+            "default": ""
+        },
+        "buttonOpensInNewTab": {
+            "type": "boolean",
+            "default": false
+        },
+        "isFeatured": {
+            "type": "boolean",
+            "default": false
+        },
+        "featuredLabel": {
+            "type": "string",
+            "default": "Most Popular"
+        }
+    },
+    "example": {
+        "attributes": {
+            "planName": "Pro",
+            "price": "$29",
+            "pricePeriod": "/month",
+            "description": "For growing teams.",
+            "buttonText": "Choose Pro",
+            "buttonUrl": "#",
+            "isFeatured": true
+        },
+        "innerBlocks": [
+            {
+                "name": "core/list",
+                "attributes": {},
+                "innerBlocks": [
+                    { "name": "core/list-item", "attributes": { "content": "Unlimited projects" } },
+                    { "name": "core/list-item", "attributes": { "content": "Priority support" } }
+                ]
+            }
+        ]
+    },
+    "supports": {
+        "html": false,
+        "anchor": true,
+        "spacing": {
+            "padding": true,
+            "__experimentalDefaultControls": {
+                "padding": true
+            }
+        },
+        "__experimentalBorder": {
+            "radius": true,
+            "__experimentalDefaultControls": {
+                "radius": true
+            }
+        }
+    },
+    "editorScript": "file:./index.js",
+    "style": "file:./style-index.css",
+    "render": "file:./render.php"
+}

@@ -1,0 +1,97 @@
+.wp-block-pv-blocks-suite-pricing-plan {
+    position: relative;
+    box-sizing: border-box;
+    flex: 1 1 240px;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+
+    &.is-featured {
+        border-color: #1e1e1e;
+        border-width: 2px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    }
+
+    &__featured-badge {
+        position: absolute;
+        top: -0.75rem;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #1e1e1e;
+        color: #fff;
+        font-size: 0.75rem;
+        font-weight: 600;
+        padding: 0.25rem 0.75rem;
+        border-radius: 999px;
+        white-space: nowrap;
+    }
+
+    &__plan-name {
+        margin: 0.5rem 0 0;
+    }
+
+    &__price {
+        display: flex;
+        align-items: baseline;
+        gap: 0.25rem;
+        margin: 0.5rem 0;
+    }
+
+    &__price-amount {
+        font-size: 2rem;
+        font-weight: 700;
+    }
+
+    &__price-period {
+        color: #757575;
+    }
+
+    &__description {
+        margin: 0 0 1rem;
+        color: #444;
+    }
+
+    &__features {
+        flex: 1;
+        margin-bottom: 1.5rem;
+    }
+
+    &__button {
+        display: inline-block;
+        text-align: center;
+        padding: 0.75rem 1.5rem;
+        border-radius: 4px;
+        background-color: #1e1e1e;
+        color: #fff;
+        text-decoration: none;
+        cursor: pointer;
+        outline: none;
+
+        // outline is suppressed above and reinstated here, scoped to
+        // :focus-visible only, so a mouse click doesn't show a focus ring
+        // but keyboard (Tab) navigation still gets a clearly visible one —
+        // removing it outright would fail WCAG 2.4.7 (Focus Visible).
+        &:focus-visible {
+            outline: 2px solid currentColor;
+            outline-offset: 2px;
+        }
+    }
+
+    // Standard visually-hidden technique: content stays in the accessible
+    // name/DOM for screen readers but is clipped to 1px and removed from
+    // visual flow. Not reusing a theme's `.screen-reader-text` since we
+    // can't guarantee every theme defines it (see cta/style.scss).
+    &__visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+    }
+}
