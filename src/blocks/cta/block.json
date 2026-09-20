@@ -2,8 +2,8 @@
     "$schema": "https://schemas.wp.org/trunk/block.json",
     "apiVersion": 3,
     "name": "pv-blocks-suite/cta",
-    "title": "PV CTA",
-    "category": "design",
+    "title": "CTA",
+    "category": "pv-blocks-suite",
     "icon": "megaphone",
     "description": "Call-to-action block with heading, description, and a button.",
     "keywords": ["cta", "call to action", "button"],
@@ -56,6 +56,17 @@
         "buttonTextColor": {
             "type": "string",
             "default": ""
+        }
+    },
+    "example": {
+        "attributes": {
+            "heading": "Ready to get started?",
+            "description": "Join thousands of happy customers already using our product.",
+            "buttonText": "Get Started",
+            "buttonUrl": "#",
+            "backgroundColor": "#f0e6ff",
+            "buttonBackgroundColor": "#6b46c1",
+            "buttonTextColor": "#ffffff"
         }
     },
     "supports": {

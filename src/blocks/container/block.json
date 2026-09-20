@@ -2,8 +2,8 @@
     "$schema": "https://schemas.wp.org/trunk/block.json",
     "apiVersion": 3,
     "name": "pv-blocks-suite/container",
-    "title": "PV Container",
-    "category": "design",
+    "title": "Container",
+    "category": "pv-blocks-suite",
     "icon": "cover-image",
     "description": "Reusable wrapper block with padding, background, and max-width controls. Other blocks (CTA, testimonials, stats) can be nested inside it.",
     "keywords": ["container", "wrapper", "section"],
@@ -37,6 +37,24 @@
             "type": "string",
             "default": "1200px"
         }
+    },
+    "example": {
+        "attributes": {
+            "paddingTop": "2rem",
+            "paddingBottom": "2rem",
+            "paddingLeft": "1.5rem",
+            "paddingRight": "1.5rem",
+            "backgroundColor": "#f0f0f0",
+            "maxWidth": "480px"
+        },
+        "innerBlocks": [
+            {
+                "name": "core/paragraph",
+                "attributes": {
+                    "content": "This is a container block. Drop any content inside it."
+                }
+            }
+        ]
     },
     "supports": {
         "align": ["wide", "full"],

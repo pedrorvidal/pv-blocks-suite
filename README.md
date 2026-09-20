@@ -22,7 +22,10 @@ different licensing.
 
 ## Blocks
 
-### PV Container
+Every block below lives in its own **PV Blocks Suite** category in the
+inserter, positioned right after WordPress' first default category.
+
+### Container
 
 A reusable wrapper block for composing layout sections.
 
@@ -32,7 +35,7 @@ A reusable wrapper block for composing layout sections.
 - Wide and full alignment support
 - Nests any other blocks via `InnerBlocks`
 
-### PV CTA
+### CTA
 
 A call-to-action block for driving a single, focused action.
 
@@ -47,7 +50,7 @@ A call-to-action block for driving a single, focused action.
 - Native padding and border-radius controls, with automatic content
   clipping (`overflow: hidden`) whenever a radius is applied
 
-### PV Accordion
+### Accordion
 
 A list of collapsible items, ideal for FAQs.
 

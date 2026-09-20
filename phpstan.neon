@@ -16,3 +16,4 @@ parameters:
         # static analysis. Correctness for these is verified by actually
         # running them (`npm run test:php`), not by PHPStan.
         - src/*/*/test/*Test.php
+        - includes/test/*Test.php

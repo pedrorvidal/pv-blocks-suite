@@ -2,8 +2,8 @@
     "$schema": "https://schemas.wp.org/trunk/block.json",
     "apiVersion": 3,
     "name": "pv-blocks-suite/accordion",
-    "title": "PV Accordion",
-    "category": "design",
+    "title": "Accordion",
+    "category": "pv-blocks-suite",
     "icon": "list-view",
     "description": "A list of collapsible accordion items, ideal for FAQs.",
     "keywords": ["accordion", "faq", "toggle", "collapse"],
@@ -21,6 +21,33 @@
     "providesContext": {
         "pv-blocks-suite/accordionGroupId": "groupId",
         "pv-blocks-suite/accordionAllowMultipleOpen": "allowMultipleOpen"
+    },
+    "example": {
+        "attributes": {
+            "groupId": "example-accordion"
+        },
+        "innerBlocks": [
+            {
+                "name": "pv-blocks-suite/accordion-item",
+                "attributes": { "summary": "What is included?" },
+                "innerBlocks": [
+                    {
+                        "name": "core/paragraph",
+                        "attributes": { "content": "Everything you need to get started." }
+                    }
+                ]
+            },
+            {
+                "name": "pv-blocks-suite/accordion-item",
+                "attributes": { "summary": "How do I get support?" },
+                "innerBlocks": [
+                    {
+                        "name": "core/paragraph",
+                        "attributes": { "content": "Reach out anytime via email." }
+                    }
+                ]
+            }
+        ]
     },
     "supports": {
         "align": ["wide", "full"],

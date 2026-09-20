@@ -2,10 +2,10 @@
     "$schema": "https://schemas.wp.org/trunk/block.json",
     "apiVersion": 3,
     "name": "pv-blocks-suite/accordion-item",
-    "title": "PV Accordion Item",
-    "category": "design",
+    "title": "Accordion Item",
+    "category": "pv-blocks-suite",
     "icon": "arrow-down-alt2",
-    "description": "A single collapsible item within a PV Accordion block.",
+    "description": "A single collapsible item within an Accordion block.",
     "keywords": ["accordion", "faq", "item"],
     "textdomain": "pv-blocks-suite",
     "parent": ["pv-blocks-suite/accordion"],
@@ -27,6 +27,17 @@
         "pv-blocks-suite/accordionGroupId",
         "pv-blocks-suite/accordionAllowMultipleOpen"
     ],
+    "example": {
+        "attributes": {
+            "summary": "What is included?"
+        },
+        "innerBlocks": [
+            {
+                "name": "core/paragraph",
+                "attributes": { "content": "Everything you need to get started." }
+            }
+        ]
+    },
     "supports": {
         "html": false,
         "anchor": true
