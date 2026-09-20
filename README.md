@@ -5,6 +5,9 @@
 [![License: GPL v2+](https://img.shields.io/badge/license-GPL--2.0--or--later-blue.svg)](https://www.gnu.org/licenses/gpl-2.0.html)
 [![PHP](https://img.shields.io/badge/PHP-%3E%3D8.2-777bb4.svg)](https://www.php.net/)
 [![WordPress](https://img.shields.io/badge/WordPress-Block%20Editor-21759b.svg)](https://wordpress.org/)
+[![React](https://img.shields.io/badge/React-19-61dafb.svg)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-7-3178c6.svg)](https://www.typescriptlang.org/)
+[![JavaScript](https://img.shields.io/badge/JavaScript-ES2020-f7df1e.svg)](https://developer.mozilla.org/docs/Web/JavaScript)
 
 PV Blocks Suite bundles a growing collection of production-ready Gutenberg
 blocks into a single, lightweight plugin. Every block is a **dynamic block**
