@@ -86,4 +86,34 @@ describe( 'cta block edit', () => {
 			color: '#00ff00',
 		} );
 	} );
+
+	it( 'applies overflow: hidden when a linked border radius is set', () => {
+		renderEdit( {
+			...baseAttributes,
+			style: { border: { radius: '12px' } },
+		} );
+
+		const wrapper = screen.getByLabelText( 'Add heading…' ).parentElement;
+
+		expect( wrapper ).toHaveStyle( { overflow: 'hidden' } );
+	} );
+
+	it( 'applies overflow: hidden when only one corner radius is unlinked and set', () => {
+		renderEdit( {
+			...baseAttributes,
+			style: { border: { radius: { topLeft: '12px' } } },
+		} );
+
+		const wrapper = screen.getByLabelText( 'Add heading…' ).parentElement;
+
+		expect( wrapper ).toHaveStyle( { overflow: 'hidden' } );
+	} );
+
+	it( 'omits overflow when no border radius is set', () => {
+		renderEdit( baseAttributes );
+
+		const wrapper = screen.getByLabelText( 'Add heading…' ).parentElement;
+
+		expect( wrapper?.style.overflow ).toBe( '' );
+	} );
 } );

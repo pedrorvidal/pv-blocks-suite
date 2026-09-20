@@ -138,6 +138,76 @@ final class Cta_Render_Test extends WP_UnitTestCase {
 		);
 	}
 
+	public function test_native_padding_support_is_applied(): void {
+		$output = $this->render_cta(
+			[
+				'style' => [
+					'spacing' => [
+						'padding' => [
+							'top'    => '2rem',
+							'right'  => '1rem',
+							'bottom' => '2rem',
+							'left'   => '1rem',
+						],
+					],
+				],
+			]
+		);
+
+		$this->assertStringContainsString( 'padding-top:2rem', $output );
+		$this->assertStringContainsString( 'padding-right:1rem', $output );
+		$this->assertStringContainsString( 'padding-bottom:2rem', $output );
+		$this->assertStringContainsString( 'padding-left:1rem', $output );
+	}
+
+	public function test_native_border_radius_support_is_applied(): void {
+		$output = $this->render_cta(
+			[
+				'style' => [
+					'border' => [
+						'radius' => '12px',
+					],
+				],
+			]
+		);
+
+		$this->assertStringContainsString( 'border-radius:12px', $output );
+	}
+
+	public function test_overflow_hidden_when_linked_border_radius_is_set(): void {
+		$output = $this->render_cta(
+			[
+				'style' => [
+					'border' => [
+						'radius' => '12px',
+					],
+				],
+			]
+		);
+
+		$this->assertStringContainsString( 'overflow:hidden', $output );
+	}
+
+	public function test_overflow_hidden_when_only_one_corner_radius_is_unlinked_and_set(): void {
+		$output = $this->render_cta(
+			[
+				'style' => [
+					'border' => [
+						'radius' => [ 'topLeft' => '12px' ],
+					],
+				],
+			]
+		);
+
+		$this->assertStringContainsString( 'overflow:hidden', $output );
+	}
+
+	public function test_overflow_is_omitted_when_no_border_radius_is_set(): void {
+		$output = $this->render_cta();
+
+		$this->assertStringNotContainsString( 'overflow', $output );
+	}
+
 	public function test_heading_and_description_allow_safe_html_but_strip_scripts(): void {
 		$output = $this->render_cta(
 			[

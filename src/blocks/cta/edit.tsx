@@ -18,6 +18,28 @@ interface MediaUploadSelection {
     url: string;
 }
 
+type BorderRadius = NonNullable<
+    NonNullable<CtaAttributes['style']>['border']
+>['radius'];
+
+// The native border-radius Inspector control (`supports.border.radius`)
+// stores either a single linked value or a per-corner object once a user
+// unlinks the corners — either way, any non-empty value means content
+// (namely the background image) should be clipped to the rounded corners.
+function hasVisibleBorderRadius(radius: BorderRadius): boolean {
+    if (!radius) {
+        return false;
+    }
+
+    if (typeof radius === 'string') {
+        return radius.trim() !== '';
+    }
+
+    return Object.values(radius).some(
+        (value) => typeof value === 'string' && value.trim() !== ''
+    );
+}
+
 export default function Edit({
     attributes,
     setAttributes,
@@ -36,6 +58,10 @@ export default function Edit({
         buttonTextColor,
     } = attributes;
 
+    const hasBorderRadius = hasVisibleBorderRadius(
+        attributes.style?.border?.radius
+    );
+
     const blockProps = useBlockProps({
         style: {
             textAlign: textAlign || undefined,
@@ -44,6 +70,7 @@ export default function Edit({
             backgroundImage: backgroundImage
                 ? `url(${backgroundImage})`
                 : undefined,
+            overflow: hasBorderRadius ? 'hidden' : undefined,
         },
     });
 

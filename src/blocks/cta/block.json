@@ -57,7 +57,13 @@
     "supports": {
         "align": ["wide", "full"],
         "html": false,
-        "anchor": true
+        "anchor": true,
+        "spacing": {
+            "padding": true
+        },
+        "__experimentalBorder": {
+            "radius": true
+        }
     },
     "editorScript": "file:./index.js",
     "editorStyle": "file:./index.css",

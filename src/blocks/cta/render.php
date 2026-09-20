@@ -27,10 +27,30 @@ $text_color              = (string) ( $attributes['textColor'] ?? '' );
 $button_background_color = (string) ( $attributes['buttonBackgroundColor'] ?? '' );
 $button_text_color       = (string) ( $attributes['buttonTextColor'] ?? '' );
 
+// The `style.border.radius` attribute isn't ours: it's injected
+// automatically by the `supports.border.radius` declaration in block.json,
+// and is either a single linked value or (once a user unlinks the corners
+// in the Inspector) a per-corner array. Either shape means at least one
+// corner is rounded, so content should be clipped to it.
+$border_radius     = $attributes['style']['border']['radius'] ?? null;
+$has_border_radius = false;
+
+if ( is_string( $border_radius ) && '' !== $border_radius ) {
+	$has_border_radius = true;
+} elseif ( is_array( $border_radius ) ) {
+	foreach ( $border_radius as $corner_value ) {
+		if ( is_string( $corner_value ) && '' !== $corner_value ) {
+			$has_border_radius = true;
+			break;
+		}
+	}
+}
+
 /** @var array<string, string|null> $styles CSS property => value map, null entries are skipped. */
 $styles = [
 	'text-align' => $text_align ?: null,
 	'color'      => $text_color ?: null,
+	'overflow'   => $has_border_radius ? 'hidden' : null,
 ];
 
 if ( $background_color ) {
