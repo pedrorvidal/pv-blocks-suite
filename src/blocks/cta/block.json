@@ -59,10 +59,16 @@
         "html": false,
         "anchor": true,
         "spacing": {
-            "padding": true
+            "padding": true,
+            "__experimentalDefaultControls": {
+                "padding": true
+            }
         },
         "__experimentalBorder": {
-            "radius": true
+            "radius": true,
+            "__experimentalDefaultControls": {
+                "radius": true
+            }
         }
     },
     "editorScript": "file:./index.js",
