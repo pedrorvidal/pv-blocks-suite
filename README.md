@@ -1,0 +1,151 @@
+# PV Blocks Suite
+
+**A suite of native Gutenberg blocks for WordPress content creators.**
+
+[![License: GPL v2+](https://img.shields.io/badge/license-GPL--2.0--or--later-blue.svg)](https://www.gnu.org/licenses/gpl-2.0.html)
+[![PHP](https://img.shields.io/badge/PHP-%3E%3D8.2-777bb4.svg)](https://www.php.net/)
+[![WordPress](https://img.shields.io/badge/WordPress-Block%20Editor-21759b.svg)](https://wordpress.org/)
+
+PV Blocks Suite bundles a growing collection of production-ready Gutenberg
+blocks into a single, lightweight plugin. Every block is a **dynamic block**
+— rendered server-side in PHP — built with strictly-typed PHP 8.2, React, and
+TypeScript on top of WordPress' native block-editor APIs, with no page-builder
+dependencies and no bloat.
+
+## Why a suite, not separate plugins?
+
+Shipping every block as one plugin keeps installation simple for clients,
+lets blocks share components and registration logic, and avoids inter-plugin
+dependency management. A block only gets split into its own plugin if it
+grows into a standalone product, needs a heavy unique dependency, or requires
+different licensing.
+
+## Blocks
+
+### PV Container
+
+A reusable wrapper block for composing layout sections.
+
+- Padding control for each side (top, right, bottom, left)
+- Solid background color or background image
+- Configurable max-width with automatic horizontal centering
+- Wide and full alignment support
+- Nests any other blocks via `InnerBlocks`
+
+### PV CTA
+
+A call-to-action block for driving a single, focused action.
+
+- Rich-text heading and description with inline formatting (bold, italic)
+- One button with configurable label, URL, and "open in new tab"
+- Text alignment control (left, center, right, justify)
+- Independent background and text colors for both the block and the button
+- Optional background image
+- Native padding and border-radius controls, with automatic content
+  clipping (`overflow: hidden`) whenever a radius is applied
+
+## Requirements
+
+- PHP 8.2 or later
+- WordPress with the Block Editor (Gutenberg) enabled
+- [Node.js](https://nodejs.org/) and npm (development only)
+- [Composer](https://getcomposer.org/) (development only)
+
+## Installation
+
+1. Copy (or clone) this repository into `wp-content/plugins/pv-blocks-suite`
+   on your WordPress installation.
+2. Install dependencies and build the production assets:
+
+   ```bash
+   composer install --no-dev
+   npm install
+   npm run build
+   ```
+
+3. Activate **PV Blocks Suite** from the WordPress admin's Plugins screen,
+   or via WP-CLI:
+
+   ```bash
+   wp plugin activate pv-blocks-suite
+   ```
+
+Blocks appear in the block inserter under their respective categories —
+no further configuration is required.
+
+## Development
+
+### Stack
+
+- **PHP 8.2+** with `declare(strict_types=1)` and typed signatures throughout
+- **React + TypeScript** for the block-editor UI, compiled by
+  [`@wordpress/scripts`](https://www.npmjs.com/package/@wordpress/scripts)
+- **Native Gutenberg APIs** (`@wordpress/blocks`, `@wordpress/block-editor`,
+  `@wordpress/components`) — no third-party editor frameworks
+
+### Project structure
+
+```
+pv-blocks-suite/
+├── pv-blocks-suite.php     # Plugin bootstrap
+├── composer.json           # PHPStan, PSR-4 autoloading
+├── package.json
+├── phpstan.neon
+├── phpcs.xml.dist
+├── .wp-env.json             # Development environment (port 8888)
+├── .wp-env.tests.json       # Test environment (port 8889)
+├── includes/
+│   └── class-block-loader.php   # Auto-registers blocks from src/blocks/*/block.json
+├── src/
+│   ├── blocks/
+│   │   └── {block-name}/
+│   │       ├── block.json
+│   │       ├── edit.tsx
+│   │       ├── render.php   # Dynamic (server-side) render
+│   │       ├── style.scss
+│   │       └── test/
+│   └── shared/
+│       ├── components/
+│       └── hooks/
+└── build/                    # Compiled assets (generated)
+```
+
+Every block lives in its own folder under `src/blocks/` and is discovered
+automatically by `Block_Loader` — adding a new block never requires touching
+the bootstrap.
+
+### Local environment
+
+Local development runs on [`@wordpress/env`](https://www.npmjs.com/package/@wordpress/env)
+(`wp-env`), with separate configurations for development and automated
+tests:
+
+| Command                      | Description                                  |
+| ----------------------------- | --------------------------------------------- |
+| `npm run env:start`           | Start the development site (`localhost:8888`) |
+| `npm run env:start:tests`     | Start the test environment (`localhost:8889`) |
+| `npm run env:stop`            | Stop the development site                     |
+| `npm run env:stop:tests`      | Stop the test environment                     |
+| `npm run env:destroy`         | Remove the development environment            |
+| `npm run env:destroy:tests`   | Remove the test environment                   |
+| `npm run start`               | Start the webpack dev build in watch mode     |
+| `npm run build`               | Produce a production build                    |
+
+### Quality tooling
+
+Every change is expected to pass the full quality gate before merging:
+
+| Tool                           | Command                | What it checks                                         |
+| ------------------------------- | ----------------------- | -------------------------------------------------------- |
+| **PHPStan** (level 5+)          | `npm run lint:php:stan` | Static analysis, with WordPress core stubs               |
+| **PHP_CodeSniffer** (WPCS)      | `npm run lint:php`      | WordPress-Extra coding standards                         |
+| **PHPUnit** (`wp-phpunit`)      | `npm run test:php`      | Server-side rendering, real `WP_UnitTestCase` integration |
+| **Jest** (`wp-scripts`)         | `npm run test:js`       | Editor component behavior via Testing Library             |
+| **TypeScript**                  | `npm run typecheck`     | Type-checking only, build stays on Babel                 |
+
+Auto-fixable WPCS violations can be corrected with `npm run lint:php:fix`.
+
+## License
+
+Released under the [GPL-2.0-or-later](https://www.gnu.org/licenses/gpl-2.0.html)
+license, in line with the WordPress plugin ecosystem.
