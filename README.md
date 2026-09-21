@@ -191,6 +191,20 @@ switchable sections.
 - If JavaScript never loads, every tab's content is still shown, stacked
   and fully readable, rather than a broken widget
 
+### Team
+
+A responsive grid of team member cards, ideal for "About us" and
+"Meet the team" sections.
+
+- Any number of team members, added, reordered, duplicated, or removed
+  through the standard block toolbar
+- Configurable column count (2–4), responsive down to a single column on
+  small screens
+- Each member: an optional photo with editable alt text, a name
+  (configurable H2–H6 heading), a role or title, and an optional short
+  bio
+- Native padding and border-radius controls
+
 ## Requirements
 
 - PHP 8.2 or later

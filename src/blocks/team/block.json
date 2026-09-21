@@ -1,0 +1,56 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "pv-blocks-suite/team",
+    "title": "Team",
+    "category": "pv-blocks-suite",
+    "icon": "groups",
+    "description": "A responsive grid of team member cards, ideal for an \"About us\" or \"Meet the team\" section.",
+    "keywords": ["team", "staff", "people", "grid"],
+    "textdomain": "pv-blocks-suite",
+    "attributes": {
+        "columns": {
+            "type": "number",
+            "default": 3
+        }
+    },
+    "example": {
+        "attributes": {
+            "columns": 3
+        },
+        "innerBlocks": [
+            {
+                "name": "pv-blocks-suite/team-member",
+                "attributes": {
+                    "name": "Alex Morgan",
+                    "role": "CEO & Founder",
+                    "bio": "Leads the company's overall vision and strategy."
+                }
+            },
+            {
+                "name": "pv-blocks-suite/team-member",
+                "attributes": {
+                    "name": "Jordan Lee",
+                    "role": "Head of Design",
+                    "bio": "Shapes the look and feel of every product."
+                }
+            },
+            {
+                "name": "pv-blocks-suite/team-member",
+                "attributes": {
+                    "name": "Sam Rivera",
+                    "role": "Lead Engineer",
+                    "bio": "Builds and maintains the platform's core systems."
+                }
+            }
+        ]
+    },
+    "supports": {
+        "align": ["wide", "full"],
+        "html": false,
+        "anchor": true
+    },
+    "editorScript": "file:./index.js",
+    "style": "file:./style-index.css",
+    "render": "file:./render.php"
+}

@@ -1,0 +1,64 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "pv-blocks-suite/team-member",
+    "title": "Team Member",
+    "category": "pv-blocks-suite",
+    "icon": "admin-users",
+    "description": "A single team member card within a Team block.",
+    "keywords": ["team", "staff", "person", "grid item"],
+    "textdomain": "pv-blocks-suite",
+    "parent": ["pv-blocks-suite/team"],
+    "attributes": {
+        "avatarUrl": {
+            "type": "string",
+            "default": ""
+        },
+        "avatarAlt": {
+            "type": "string",
+            "default": ""
+        },
+        "name": {
+            "type": "string",
+            "default": ""
+        },
+        "headingLevel": {
+            "type": "number",
+            "default": 3
+        },
+        "role": {
+            "type": "string",
+            "default": ""
+        },
+        "bio": {
+            "type": "string",
+            "default": ""
+        }
+    },
+    "example": {
+        "attributes": {
+            "name": "Alex Morgan",
+            "role": "CEO & Founder",
+            "bio": "Leads the company's overall vision and strategy."
+        }
+    },
+    "supports": {
+        "html": false,
+        "anchor": true,
+        "spacing": {
+            "padding": true,
+            "__experimentalDefaultControls": {
+                "padding": true
+            }
+        },
+        "__experimentalBorder": {
+            "radius": true,
+            "__experimentalDefaultControls": {
+                "radius": true
+            }
+        }
+    },
+    "editorScript": "file:./index.js",
+    "style": "file:./style-index.css",
+    "render": "file:./render.php"
+}

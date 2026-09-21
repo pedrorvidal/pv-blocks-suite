@@ -1,0 +1,37 @@
+.wp-block-pv-blocks-suite-team-member {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+
+    &__avatar {
+        display: block;
+        width: 96px;
+        height: 96px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin: 0 0 1rem;
+    }
+
+    &__name {
+        margin: 0 0 0.25rem;
+    }
+
+    &__role {
+        margin: 0 0 0.75rem;
+        // Dims whatever color is actually in effect (the theme's default,
+        // or any ancestor-provided color) rather than replacing it with a
+        // fixed gray — see docs/PROGRESS.md's "hardcoded color beats
+        // inherited color" gotcha for the full reasoning, and
+        // testimonial-item's identical treatment for its own role field.
+        opacity: 0.7;
+    }
+
+    &__bio {
+        margin: 0;
+    }
+}
