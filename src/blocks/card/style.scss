@@ -1,0 +1,90 @@
+.wp-block-pv-blocks-suite-card {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+
+    // A full-bleed image (flush against the card's edges) was considered
+    // and rejected: it would need a negative margin matching whatever
+    // padding is in effect, but padding is user-configurable via the
+    // native Dimensions control — a fixed negative-margin offset would
+    // only stay correct at the CSS default and visibly misalign the
+    // moment someone changes the padding. Keeping the image inset like
+    // everything else is simpler and doesn't break under a custom value.
+    &__image {
+        display: block;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        margin: 0 0 1rem;
+    }
+
+    &__heading {
+        margin: 0 0 0.5rem;
+    }
+
+    &__description {
+        margin: 0 0 1rem;
+        flex: 1;
+    }
+
+    &__button {
+        align-self: flex-start;
+        display: inline-block;
+        padding: 0.75rem 1.5rem;
+        border-radius: 4px;
+        background-color: #1e1e1e;
+        color: #fff;
+        text-decoration: none;
+        cursor: pointer;
+        outline: none;
+        transition:
+            opacity 0.2s ease,
+            transform 0.2s ease;
+
+        // Same color-agnostic hover feedback as cta/pricing-plan's
+        // buttons — see cta/style.scss for the full rationale.
+        &:hover {
+            opacity: 0.85;
+            transform: translateY(-1px);
+        }
+
+        &:active {
+            transform: translateY(0);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            transition: opacity 0.2s ease;
+
+            &:hover {
+                transform: none;
+            }
+        }
+
+        // outline is suppressed above and reinstated here, scoped to
+        // :focus-visible only — see cta/style.scss for the full WCAG
+        // 2.4.7 rationale.
+        &:focus-visible {
+            outline: 2px solid currentColor;
+            outline-offset: 2px;
+        }
+    }
+
+    // Standard visually-hidden technique: content stays in the accessible
+    // name/DOM for screen readers but is clipped to 1px and removed from
+    // visual flow. Not reusing a theme's `.screen-reader-text` since we
+    // can't guarantee every theme defines it (see cta/style.scss).
+    &__visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+    }
+}

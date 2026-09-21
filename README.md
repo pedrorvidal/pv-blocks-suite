@@ -89,6 +89,20 @@ A row of pricing cards for comparing plans.
   warning) just for that card
 - Native padding and border-radius controls
 
+### Card Grid
+
+A responsive grid of cards, ideal for services, portfolios, or blog
+teasers.
+
+- Any number of cards, added, reordered, duplicated, or removed through
+  the standard block toolbar
+- Configurable column count (2–4), responsive down to a single column on
+  small screens
+- Each card: an image with editable alt text, a heading (configurable
+  H2–H6), a description, and a button (URL, "open in new tab" with a
+  screen-reader announcement)
+- Native padding and border-radius controls
+
 ## Requirements
 
 - PHP 8.2 or later

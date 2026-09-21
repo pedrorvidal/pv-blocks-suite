@@ -1,0 +1,53 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "pv-blocks-suite/card-grid",
+    "title": "Card Grid",
+    "category": "pv-blocks-suite",
+    "icon": "grid-view",
+    "description": "A responsive grid of cards, ideal for services, portfolios, or blog teasers.",
+    "keywords": ["cards", "grid", "gallery", "portfolio"],
+    "textdomain": "pv-blocks-suite",
+    "attributes": {
+        "columns": {
+            "type": "number",
+            "default": 3
+        }
+    },
+    "example": {
+        "attributes": {
+            "columns": 3
+        },
+        "innerBlocks": [
+            {
+                "name": "pv-blocks-suite/card",
+                "attributes": {
+                    "heading": "Fast",
+                    "description": "Built for speed from the ground up."
+                }
+            },
+            {
+                "name": "pv-blocks-suite/card",
+                "attributes": {
+                    "heading": "Reliable",
+                    "description": "Tested and trusted by thousands."
+                }
+            },
+            {
+                "name": "pv-blocks-suite/card",
+                "attributes": {
+                    "heading": "Simple",
+                    "description": "Easy to set up, easy to use."
+                }
+            }
+        ]
+    },
+    "supports": {
+        "align": ["wide", "full"],
+        "html": false,
+        "anchor": true
+    },
+    "editorScript": "file:./index.js",
+    "style": "file:./style-index.css",
+    "render": "file:./render.php"
+}
