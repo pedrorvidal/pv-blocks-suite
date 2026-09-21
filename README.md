@@ -2,7 +2,7 @@
 
 **A suite of native Gutenberg blocks for WordPress content creators.**
 
-![Version](https://img.shields.io/badge/version-0.1.0-informational.svg)
+![Version](https://img.shields.io/badge/version-1.0.0-informational.svg)
 [![License: GPL v2+](https://img.shields.io/badge/license-GPL--2.0--or--later-blue.svg)](https://www.gnu.org/licenses/gpl-2.0.html)
 [![PHP](https://img.shields.io/badge/PHP-%3E%3D8.2-777bb4.svg)](https://www.php.net/)
 [![WordPress](https://img.shields.io/badge/WordPress-Block%20Editor-21759b.svg)](https://wordpress.org/)
