@@ -12,6 +12,16 @@
         border-color: #1e1e1e;
         border-width: 2px;
         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+
+        // Nested blocks in the feature list (e.g. core/list) often carry
+        // their own explicit text color from the active theme, which
+        // otherwise wins over the card's inherited featuredTextColor —
+        // inheritance always loses to *any* explicit declaration,
+        // regardless of specificity. Forcing every descendant back to
+        // `inherit` is what actually lets the custom color reach them.
+        .wp-block-pv-blocks-suite-pricing-plan__features * {
+            color: inherit;
+        }
     }
 
     &__featured-badge {
@@ -44,13 +54,20 @@
         font-weight: 700;
     }
 
+    // opacity, not a fixed gray `color`: a hardcoded color would win
+    // over the card's inherited text color (its own explicit
+    // declaration always beats inheritance, no matter the specificity),
+    // which is exactly what made these unreadable on a custom
+    // `featuredBackgroundColor`. Opacity dims whatever color is actually
+    // in effect — the theme's default text color normally, or
+    // `featuredTextColor` on a featured card — instead of replacing it.
     &__price-period {
-        color: #757575;
+        opacity: 0.7;
     }
 
     &__description {
         margin: 0 0 1rem;
-        color: #444;
+        opacity: 0.7;
     }
 
     &__features {
