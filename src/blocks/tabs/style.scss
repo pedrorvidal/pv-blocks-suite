@@ -1,0 +1,41 @@
+.wp-block-pv-blocks-suite-tabs {
+    box-sizing: border-box;
+
+    &__tablist {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.25rem;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    &__tab {
+        appearance: none;
+        background: none;
+        border: none;
+        border-bottom: 2px solid transparent;
+        margin: 0 0 -1px;
+        padding: 0.75rem 1rem;
+        font: inherit;
+        font-weight: 600;
+        color: inherit;
+        cursor: pointer;
+        outline: none;
+
+        // outline suppressed above, reinstated only for :focus-visible —
+        // same WCAG 2.4.7 pattern as accordion-item's summary / cta's
+        // button: a mouse click stays clean, keyboard (Tab) navigation
+        // still gets a clearly visible ring.
+        &:focus-visible {
+            outline: 2px solid currentColor;
+            outline-offset: 2px;
+        }
+
+        &[aria-selected='true'] {
+            border-bottom-color: currentColor;
+        }
+    }
+
+    &__panels {
+        padding-top: 1rem;
+    }
+}

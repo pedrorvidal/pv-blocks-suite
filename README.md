@@ -176,6 +176,21 @@ Clients", "20 Years", "99% Satisfaction").
   their final value immediately instead of animating
 - Native padding and border-radius controls
 
+### Tabs
+
+A standard, accessible tabbed interface for organizing content into
+switchable sections.
+
+- Any number of tabs, added, reordered, duplicated, or removed through
+  the standard block toolbar
+- Each tab's panel accepts real nested blocks, not just plain text
+- Full keyboard support — arrow keys, Home, and End move between tabs
+  and switch the active panel, following the WAI-ARIA Tabs pattern
+- Correct ARIA roles and attributes throughout (`tablist`/`tab`/
+  `tabpanel`, `aria-selected`, roving `tabindex`)
+- If JavaScript never loads, every tab's content is still shown, stacked
+  and fully readable, rather than a broken widget
+
 ## Requirements
 
 - PHP 8.2 or later

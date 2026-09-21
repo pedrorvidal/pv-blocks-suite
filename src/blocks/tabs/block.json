@@ -1,0 +1,43 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "pv-blocks-suite/tabs",
+    "title": "Tabs",
+    "category": "pv-blocks-suite",
+    "icon": "screenoptions",
+    "description": "A set of tabs for organizing content into switchable panels.",
+    "keywords": ["tabs", "tabbed", "panels"],
+    "textdomain": "pv-blocks-suite",
+    "example": {
+        "innerBlocks": [
+            {
+                "name": "pv-blocks-suite/tab-item",
+                "attributes": { "label": "Overview", "tabId": "example-tab-1" },
+                "innerBlocks": [
+                    {
+                        "name": "core/paragraph",
+                        "attributes": { "content": "A short overview goes here." }
+                    }
+                ]
+            },
+            {
+                "name": "pv-blocks-suite/tab-item",
+                "attributes": { "label": "Details", "tabId": "example-tab-2" },
+                "innerBlocks": [
+                    {
+                        "name": "core/paragraph",
+                        "attributes": { "content": "More detailed information goes here." }
+                    }
+                ]
+            }
+        ]
+    },
+    "supports": {
+        "align": ["wide", "full"],
+        "html": false,
+        "anchor": true
+    },
+    "editorScript": "file:./index.js",
+    "style": "file:./style-index.css",
+    "render": "file:./render.php"
+}

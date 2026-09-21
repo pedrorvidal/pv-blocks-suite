@@ -1,0 +1,38 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "pv-blocks-suite/tab-item",
+    "title": "Tab Item",
+    "category": "pv-blocks-suite",
+    "icon": "media-default",
+    "description": "A single tab within a Tabs block.",
+    "keywords": ["tab", "panel", "item"],
+    "textdomain": "pv-blocks-suite",
+    "parent": ["pv-blocks-suite/tabs"],
+    "attributes": {
+        "label": {
+            "type": "string",
+            "default": ""
+        },
+        "tabId": {
+            "type": "string",
+            "default": ""
+        }
+    },
+    "example": {
+        "attributes": { "label": "Overview", "tabId": "example-tab" },
+        "innerBlocks": [
+            {
+                "name": "core/paragraph",
+                "attributes": { "content": "A short overview goes here." }
+            }
+        ]
+    },
+    "supports": {
+        "html": false
+    },
+    "editorScript": "file:./index.js",
+    "style": "file:./style-index.css",
+    "viewScriptModule": "file:./view.js",
+    "render": "file:./render.php"
+}

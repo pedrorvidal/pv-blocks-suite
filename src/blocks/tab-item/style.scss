@@ -1,0 +1,18 @@
+.wp-block-pv-blocks-suite-tab-item {
+    box-sizing: border-box;
+
+    // Only ever rendered in the editor canvas (tab-item/edit.tsx) — the
+    // front end (render.php) never outputs this element at all, since
+    // the label is hoisted into the parent's shared tablist. Harmless to
+    // keep in this shared stylesheet regardless (unused, not wrong, on
+    // the front end), same as not splitting a dedicated editor.scss out
+    // for a single rule.
+    &__label {
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+    }
+
+    &__panel-preview {
+        padding: 0.5rem 0;
+    }
+}
