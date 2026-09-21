@@ -39,6 +39,15 @@
         border: 2px solid #fff;
     }
 
+    &__image {
+        display: block;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        border-radius: 4px;
+        margin: 0 0 0.75rem;
+    }
+
     &__date {
         display: block;
         font-size: 0.875rem;

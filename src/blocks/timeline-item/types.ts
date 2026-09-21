@@ -1,4 +1,6 @@
 export interface TimelineItemAttributes {
+    imageUrl: string;
+    imageAlt: string;
     date: string;
     heading: string;
     headingLevel: number;

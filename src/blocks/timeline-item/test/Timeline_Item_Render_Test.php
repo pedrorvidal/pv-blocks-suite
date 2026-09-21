@@ -76,9 +76,31 @@ final class Timeline_Item_Render_Test extends WP_UnitTestCase {
 	public function test_empty_fields_are_omitted(): void {
 		$output = $this->render_item();
 
+		$this->assertStringNotContainsString( '<img', $output );
 		$this->assertStringNotContainsString( '__date', $output );
 		$this->assertStringNotContainsString( '__heading', $output );
 		$this->assertStringNotContainsString( '__description', $output );
+	}
+
+	public function test_image_is_rendered_with_alt_text(): void {
+		$output = $this->render_item(
+			[
+				'imageUrl' => 'https://example.org/photo.jpg',
+				'imageAlt' => 'A launch event',
+			]
+		);
+
+		$this->assertStringContainsString( 'src="https://example.org/photo.jpg"', $output );
+		$this->assertStringContainsString( 'alt="A launch event"', $output );
+	}
+
+	public function test_image_alt_attribute_is_always_present_even_when_empty(): void {
+		$output = $this->render_item( [ 'imageUrl' => 'https://example.org/photo.jpg' ] );
+
+		// A missing `alt` attribute (as opposed to an empty one) makes
+		// screen readers fall back to announcing the raw filename/URL —
+		// alt="" explicitly marks the image as decorative instead.
+		$this->assertStringContainsString( 'alt=""', $output );
 	}
 
 	public function test_date_heading_and_description_allow_safe_html_but_strip_scripts(): void {

@@ -10,6 +10,14 @@
     "textdomain": "pv-blocks-suite",
     "parent": ["pv-blocks-suite/timeline"],
     "attributes": {
+        "imageUrl": {
+            "type": "string",
+            "default": ""
+        },
+        "imageAlt": {
+            "type": "string",
+            "default": ""
+        },
         "date": {
             "type": "string",
             "default": ""

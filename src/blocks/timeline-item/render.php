@@ -15,6 +15,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+$image_url     = (string) ( $attributes['imageUrl'] ?? '' );
+$image_alt     = (string) ( $attributes['imageAlt'] ?? '' );
 $date          = (string) ( $attributes['date'] ?? '' );
 $heading       = (string) ( $attributes['heading'] ?? '' );
 $heading_level = (int) ( $attributes['headingLevel'] ?? 3 );
@@ -26,6 +28,14 @@ $wrapper_attributes = get_block_wrapper_attributes();
 <li <?php echo $wrapper_attributes; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped by get_block_wrapper_attributes(). ?>>
 	<span class="wp-block-pv-blocks-suite-timeline-item__dot"></span>
 	<div class="wp-block-pv-blocks-suite-timeline-item__content">
+		<?php if ( $image_url ) : ?>
+			<img
+				class="wp-block-pv-blocks-suite-timeline-item__image"
+				src="<?php echo esc_url( $image_url ); ?>"
+				alt="<?php echo esc_attr( $image_alt ); ?>"
+			/>
+		<?php endif; ?>
+
 		<?php if ( $date ) : ?>
 			<span class="wp-block-pv-blocks-suite-timeline-item__date"><?php echo wp_kses_post( $date ); ?></span>
 		<?php endif; ?>

@@ -2,19 +2,29 @@ import type { BlockEditProps } from '@wordpress/blocks';
 import { createElement } from '@wordpress/element';
 import {
     useBlockProps,
+    InspectorControls,
     BlockControls,
     HeadingLevelDropdown,
     RichText,
+    MediaUpload,
+    MediaUploadCheck,
 } from '@wordpress/block-editor';
+import { PanelBody, TextControl, Button } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
 import type { TimelineItemAttributes } from './types';
+
+interface MediaUploadSelection {
+    url: string;
+    alt: string;
+}
 
 export default function Edit({
     attributes,
     setAttributes,
 }: BlockEditProps<TimelineItemAttributes>) {
-    const { date, heading, headingLevel, description } = attributes;
+    const { imageUrl, imageAlt, date, heading, headingLevel, description } =
+        attributes;
 
     const blockProps = useBlockProps();
 
@@ -30,16 +40,70 @@ export default function Edit({
                 />
             </BlockControls>
 
-            {/* No Inspector panel needed: every field (date, heading,
-                description) is edited inline via RichText, matching the
-                other content-only fields already, e.g. pricing-plan's
-                price/description. */}
+            <InspectorControls>
+                <PanelBody title={__('Image', 'pv-blocks-suite')}>
+                    <MediaUploadCheck>
+                        <MediaUpload
+                            onSelect={(media: MediaUploadSelection) =>
+                                setAttributes({
+                                    imageUrl: media.url,
+                                    imageAlt: media.alt || imageAlt,
+                                })
+                            }
+                            allowedTypes={['image']}
+                            value={imageUrl}
+                            render={({ open }: { open: () => void }) => (
+                                <Button variant="secondary" onClick={open}>
+                                    {imageUrl
+                                        ? __('Replace image', 'pv-blocks-suite')
+                                        : __('Select image', 'pv-blocks-suite')}
+                                </Button>
+                            )}
+                        />
+                    </MediaUploadCheck>
+                    {imageUrl && (
+                        <>
+                            <Button
+                                variant="link"
+                                isDestructive
+                                onClick={() =>
+                                    setAttributes({
+                                        imageUrl: '',
+                                        imageAlt: '',
+                                    })
+                                }
+                            >
+                                {__('Remove image', 'pv-blocks-suite')}
+                            </Button>
+                            <TextControl
+                                label={__('Alt text', 'pv-blocks-suite')}
+                                help={__(
+                                    'Describe the image for screen readers. Leave empty only if the image is purely decorative.',
+                                    'pv-blocks-suite'
+                                )}
+                                value={imageAlt}
+                                onChange={(value: string) =>
+                                    setAttributes({ imageAlt: value })
+                                }
+                            />
+                        </>
+                    )}
+                </PanelBody>
+            </InspectorControls>
 
             {/* A real <li>, not a <div> — matches render.php and keeps
                 the parent <ol>'s list semantics intact. */}
             <li {...blockProps}>
                 <span className="wp-block-pv-blocks-suite-timeline-item__dot" />
                 <div className="wp-block-pv-blocks-suite-timeline-item__content">
+                    {imageUrl && (
+                        <img
+                            className="wp-block-pv-blocks-suite-timeline-item__image"
+                            src={imageUrl}
+                            alt={imageAlt}
+                        />
+                    )}
+
                     <RichText
                         tagName="span"
                         className="wp-block-pv-blocks-suite-timeline-item__date"

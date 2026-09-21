@@ -124,8 +124,8 @@ A vertical timeline for showing a sequence of events or steps.
   the standard block toolbar
 - Renders as a real ordered list, with a connecting line and dot marker
   drawn in pure CSS
-- Each event: a date or label, a heading (configurable H2–H6), and a
-  description
+- Each event: an optional image with editable alt text, a date or label,
+  a heading (configurable H2–H6), and a description
 
 ## Requirements
 

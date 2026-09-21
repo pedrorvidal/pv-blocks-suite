@@ -4,6 +4,8 @@ import Edit from '../edit';
 import type { TimelineItemAttributes } from '../types';
 
 const baseAttributes: TimelineItemAttributes = {
+	imageUrl: '',
+	imageAlt: '',
 	date: '',
 	heading: '',
 	headingLevel: 3,
@@ -55,5 +57,27 @@ describe( 'timeline-item block edit', () => {
 		expect(
 			screen.getByText( 'Series A funding' ).closest( 'h4' )
 		).not.toBeNull();
+	} );
+
+	it( 'does not render an image when imageUrl is empty', () => {
+		renderEdit( baseAttributes );
+
+		expect( screen.queryByRole( 'img' ) ).not.toBeInTheDocument();
+	} );
+
+	it( 'renders the image with its alt text', () => {
+		renderEdit( {
+			...baseAttributes,
+			imageUrl: 'https://example.org/photo.jpg',
+			imageAlt: 'A launch event',
+		} );
+
+		const image = screen.getByRole( 'img' );
+
+		expect( image ).toHaveAttribute(
+			'src',
+			'https://example.org/photo.jpg'
+		);
+		expect( image ).toHaveAttribute( 'alt', 'A launch event' );
 	} );
 } );
