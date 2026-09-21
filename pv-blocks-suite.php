@@ -22,5 +22,19 @@ define( 'PV_BLOCKS_SUITE_DIR', plugin_dir_path( __FILE__ ) );
 require_once PV_BLOCKS_SUITE_DIR . 'includes/class-block-loader.php';
 require_once PV_BLOCKS_SUITE_DIR . 'includes/class-block-categories.php';
 
+// Loaded at priority 1 so translations are available before block
+// registration (priority 10) runs `__()` on block.json title/description.
+add_action(
+	'init',
+	static function (): void {
+		load_plugin_textdomain(
+			'pv-blocks-suite',
+			false,
+			dirname( plugin_basename( __FILE__ ) ) . '/languages'
+		);
+	},
+	1
+);
+
 \PV\BlocksSuite\Block_Loader::init();
 \PV\BlocksSuite\Block_Categories::init();
