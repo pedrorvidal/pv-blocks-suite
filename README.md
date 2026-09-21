@@ -141,6 +141,22 @@ An interactive slider for comparing a before and after image.
   custom framework
 - Native padding and border-radius controls
 
+### Testimonials
+
+A responsive grid of testimonials, ideal for building trust with social
+proof.
+
+- Any number of testimonials, added, reordered, duplicated, or removed
+  through the standard block toolbar
+- Configurable column count (2–4), responsive down to a single column on
+  small screens
+- Each testimonial: a quote, the author's name, an optional role or
+  company, an optional avatar with editable alt text, and an optional
+  1–5 star rating
+- Renders as a real `<blockquote>`/`<figcaption>`/`<cite>`, not generic
+  `<div>`s, for correctly-structured, accessible markup
+- Native padding and border-radius controls
+
 ## Requirements
 
 - PHP 8.2 or later

@@ -1,0 +1,59 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "pv-blocks-suite/testimonials",
+    "title": "Testimonials",
+    "category": "pv-blocks-suite",
+    "icon": "format-quote",
+    "description": "A responsive grid of customer testimonials.",
+    "keywords": ["testimonials", "reviews", "quotes", "grid"],
+    "textdomain": "pv-blocks-suite",
+    "attributes": {
+        "columns": {
+            "type": "number",
+            "default": 3
+        }
+    },
+    "example": {
+        "attributes": {
+            "columns": 3
+        },
+        "innerBlocks": [
+            {
+                "name": "pv-blocks-suite/testimonial-item",
+                "attributes": {
+                    "quote": "This product completely changed how our team works. Setup took minutes, not days.",
+                    "name": "Alex Rivera",
+                    "role": "CTO, Nimbus Labs",
+                    "rating": 5
+                }
+            },
+            {
+                "name": "pv-blocks-suite/testimonial-item",
+                "attributes": {
+                    "quote": "Support is fast and the results speak for themselves. Couldn't ask for more.",
+                    "name": "Priya Shah",
+                    "role": "Head of Marketing, Brightside",
+                    "rating": 5
+                }
+            },
+            {
+                "name": "pv-blocks-suite/testimonial-item",
+                "attributes": {
+                    "quote": "Exactly what we needed: simple, reliable, and it just works.",
+                    "name": "Diego Fontana",
+                    "role": "Founder, Fontana Studio",
+                    "rating": 4
+                }
+            }
+        ]
+    },
+    "supports": {
+        "align": ["wide", "full"],
+        "html": false,
+        "anchor": true
+    },
+    "editorScript": "file:./index.js",
+    "style": "file:./style-index.css",
+    "render": "file:./render.php"
+}

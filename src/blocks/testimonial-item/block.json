@@ -1,0 +1,69 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "pv-blocks-suite/testimonial-item",
+    "title": "Testimonial Item",
+    "category": "pv-blocks-suite",
+    "icon": "admin-users",
+    "description": "A single testimonial within a Testimonials block.",
+    "keywords": ["testimonial", "review", "quote", "grid item"],
+    "textdomain": "pv-blocks-suite",
+    "parent": ["pv-blocks-suite/testimonials"],
+    "attributes": {
+        "avatarUrl": {
+            "type": "string",
+            "default": ""
+        },
+        "avatarAlt": {
+            "type": "string",
+            "default": ""
+        },
+        "quote": {
+            "type": "string",
+            "default": ""
+        },
+        "name": {
+            "type": "string",
+            "default": ""
+        },
+        "role": {
+            "type": "string",
+            "default": ""
+        },
+        "rating": {
+            "type": "number",
+            "default": 5
+        },
+        "showRating": {
+            "type": "boolean",
+            "default": true
+        }
+    },
+    "example": {
+        "attributes": {
+            "quote": "This product completely changed how our team works. Setup took minutes, not days.",
+            "name": "Alex Rivera",
+            "role": "CTO, Nimbus Labs",
+            "rating": 5
+        }
+    },
+    "supports": {
+        "html": false,
+        "anchor": true,
+        "spacing": {
+            "padding": true,
+            "__experimentalDefaultControls": {
+                "padding": true
+            }
+        },
+        "__experimentalBorder": {
+            "radius": true,
+            "__experimentalDefaultControls": {
+                "radius": true
+            }
+        }
+    },
+    "editorScript": "file:./index.js",
+    "style": "file:./style-index.css",
+    "render": "file:./render.php"
+}

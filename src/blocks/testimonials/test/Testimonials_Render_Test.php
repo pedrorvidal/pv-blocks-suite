@@ -1,0 +1,127 @@
+<?php
+/**
+ * Tests for the `pv-blocks-suite/testimonials` block's server-side render.
+ *
+ * Renders through the real `render_block()` / `WP_Block` machinery (not by
+ * including render.php directly), so attribute defaults from block.json are
+ * applied the same way they are for a real request, and the block must
+ * actually be registered — the same guarantee Block_Loader gives in
+ * production.
+ *
+ * @package PV\BlocksSuite
+ */
+
+declare( strict_types=1 );
+
+final class Testimonials_Render_Test extends WP_UnitTestCase {
+
+	public function test_block_is_registered(): void {
+		$this->assertTrue( WP_Block_Type_Registry::get_instance()->is_registered( 'pv-blocks-suite/testimonials' ) );
+	}
+
+	public function test_testimonial_item_is_registered(): void {
+		$this->assertTrue( WP_Block_Type_Registry::get_instance()->is_registered( 'pv-blocks-suite/testimonial-item' ) );
+	}
+
+	public function test_testimonial_item_is_restricted_to_the_testimonials_parent(): void {
+		$block_type = WP_Block_Type_Registry::get_instance()->get_registered( 'pv-blocks-suite/testimonial-item' );
+
+		$this->assertSame( [ 'pv-blocks-suite/testimonials' ], $block_type->parent );
+	}
+
+	public function test_inner_blocks_content_is_preserved(): void {
+		$output = (string) render_block(
+			[
+				'blockName'    => 'pv-blocks-suite/testimonials',
+				'attrs'        => [],
+				'innerHTML'    => '<p>Marker content</p>',
+				'innerContent' => [ '<p>Marker content</p>' ],
+			]
+		);
+
+		$this->assertStringContainsString( '<p>Marker content</p>', $output );
+	}
+
+	public function test_wrapper_has_the_block_class(): void {
+		$output = (string) render_block(
+			[
+				'blockName'    => 'pv-blocks-suite/testimonials',
+				'attrs'        => [],
+				'innerHTML'    => '',
+				'innerContent' => [],
+			]
+		);
+
+		$this->assertStringContainsString( 'wp-block-pv-blocks-suite-testimonials', $output );
+	}
+
+	public function test_columns_becomes_a_css_custom_property(): void {
+		$output = (string) render_block(
+			[
+				'blockName'    => 'pv-blocks-suite/testimonials',
+				'attrs'        => [ 'columns' => 4 ],
+				'innerHTML'    => '',
+				'innerContent' => [],
+			]
+		);
+
+		$this->assertStringContainsString( '--testimonials-columns:4', $output );
+	}
+
+	public function test_columns_defaults_to_three(): void {
+		$output = (string) render_block(
+			[
+				'blockName'    => 'pv-blocks-suite/testimonials',
+				'attrs'        => [],
+				'innerHTML'    => '',
+				'innerContent' => [],
+			]
+		);
+
+		$this->assertStringContainsString( '--testimonials-columns:3', $output );
+	}
+
+	public function test_columns_is_clamped_to_a_valid_range(): void {
+		$output_too_low  = (string) render_block(
+			[
+				'blockName'    => 'pv-blocks-suite/testimonials',
+				'attrs'        => [ 'columns' => 1 ],
+				'innerHTML'    => '',
+				'innerContent' => [],
+			]
+		);
+		$output_too_high = (string) render_block(
+			[
+				'blockName'    => 'pv-blocks-suite/testimonials',
+				'attrs'        => [ 'columns' => 10 ],
+				'innerHTML'    => '',
+				'innerContent' => [],
+			]
+		);
+
+		$this->assertStringContainsString( '--testimonials-columns:2', $output_too_low );
+		$this->assertStringContainsString( '--testimonials-columns:4', $output_too_high );
+	}
+
+	public function test_nested_testimonial_item_renders_correctly(): void {
+		$output = (string) render_block(
+			[
+				'blockName'    => 'pv-blocks-suite/testimonials',
+				'attrs'        => [],
+				'innerBlocks'  => [
+					[
+						'blockName'    => 'pv-blocks-suite/testimonial-item',
+						'attrs'        => [ 'quote' => 'Great product.' ],
+						'innerBlocks'  => [],
+						'innerHTML'    => '',
+						'innerContent' => [],
+					],
+				],
+				'innerHTML'    => '',
+				'innerContent' => [ null ],
+			]
+		);
+
+		$this->assertStringContainsString( 'Great product.', $output );
+	}
+}

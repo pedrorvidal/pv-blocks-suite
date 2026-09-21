@@ -1,0 +1,62 @@
+.wp-block-pv-blocks-suite-testimonial-item {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 1.5rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+
+    &__quote {
+        margin: 0 0 1rem;
+        font-style: italic;
+        flex: 1;
+    }
+
+    &__meta {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    &__avatar {
+        width: 48px;
+        height: 48px;
+        flex-shrink: 0;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    &__person {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__name {
+        font-style: normal;
+        font-weight: 600;
+    }
+
+    &__role {
+        font-size: 0.875em;
+        // Dims whatever color is actually in effect (the theme's default,
+        // or any ancestor-provided color) rather than replacing it with a
+        // fixed gray — see docs/PROGRESS.md's "hardcoded color beats
+        // inherited color" gotcha for the full reasoning.
+        opacity: 0.7;
+    }
+
+    &__rating {
+        display: flex;
+        gap: 2px;
+        margin-top: 0.5rem;
+        color: #f5a623;
+    }
+
+    &__star {
+        display: inline-flex;
+        width: 16px;
+        height: 16px;
+    }
+}
