@@ -234,6 +234,23 @@ A responsive grid of team member cards, ideal for "About us" and
 Blocks appear in the block inserter under their respective categories —
 no further configuration is required.
 
+## Translations
+
+Fully translatable (text domain `pv-blocks-suite`). Included out of the
+box:
+
+- **English** — the plugin's own source strings, used automatically
+  whenever no translation is loaded for the site's active language.
+- **Portuguese (Brazil)** — `pt_BR`, both the editor UI (block names,
+  descriptions, Inspector controls) and the front-end output.
+
+WordPress picks up the right translation automatically based on the
+site's own language setting — nothing to configure in the plugin
+itself. To translate into another language, generate a `.pot` template
+with `wp i18n make-pot` and translate it with any gettext editor (e.g.
+[Poedit](https://poedit.net/)); see `languages/pv-blocks-suite.pot` in
+this repository as the starting point.
+
 ## Development
 
 ### Stack

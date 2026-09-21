@@ -1,0 +1,1199 @@
+# Copyright (C) 2026 Pedro Vidal
+# This file is distributed under the GPL v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: PV Blocks Suite 0.1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/pv-blocks-suite\n"
+"Last-Translator: Pedro Vidal\n"
+"Language-Team: Portuguese (Brazil)\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"POT-Creation-Date: 2026-09-21T20:22:05+00:00\n"
+"PO-Revision-Date: 2026-09-21T20:30:00+00:00\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: pv-blocks-suite\n"
+
+#. Plugin Name of the plugin
+#: pv-blocks-suite.php
+#: includes/class-block-categories.php:39
+msgid "PV Blocks Suite"
+msgstr "PV Blocks Suite"
+
+#. Description of the plugin
+#: pv-blocks-suite.php
+msgid "A set of Gutenberg blocks to streamline content creation."
+msgstr "Um conjunto de blocos do Gutenberg para agilizar a criação de conteúdo."
+
+#. Author of the plugin
+#: pv-blocks-suite.php
+msgid "Pedro Vidal"
+msgstr "Pedro Vidal"
+
+#: build/blocks/alert-box/render.php:36
+#: src/blocks/alert-box/render.php:36
+#: build/blocks/alert-box/index.js:1
+msgid "Info"
+msgstr "Informação"
+
+#: build/blocks/alert-box/render.php:37
+#: src/blocks/alert-box/render.php:37
+#: build/blocks/alert-box/index.js:1
+msgid "Success"
+msgstr "Sucesso"
+
+#: build/blocks/alert-box/render.php:38
+#: src/blocks/alert-box/render.php:38
+#: build/blocks/alert-box/index.js:1
+msgid "Warning"
+msgstr "Aviso"
+
+#: build/blocks/alert-box/render.php:39
+#: src/blocks/alert-box/render.php:39
+#: build/blocks/alert-box/index.js:1
+msgid "Error"
+msgstr "Erro"
+
+#: build/blocks/before-after/render.php:135
+#: src/blocks/before-after/render.php:135
+msgid "Before and after comparison position"
+msgstr "Posição da comparação antes e depois"
+
+#: build/blocks/card/render.php:78
+#: build/blocks/cta/render.php:127
+#: build/blocks/pricing-plan/render.php:104
+#: src/blocks/card/render.php:78
+#: src/blocks/cta/render.php:127
+#: src/blocks/pricing-plan/render.php:104
+msgid "(opens in a new tab)"
+msgstr "(abre em nova aba)"
+
+#: build/blocks/tabs/render.php:67
+#: src/blocks/tabs/render.php:67
+msgid "Tabs"
+msgstr "Abas"
+
+#. translators: %d: rating out of 5 stars.
+#: build/blocks/testimonial-item/render.php:61
+#: src/blocks/testimonial-item/render.php:61
+#, php-format
+msgid "Rated %d out of 5"
+msgstr "Avaliação %d de 5"
+
+#: build/blocks/accordion-item/index.js:1
+msgid "Item settings"
+msgstr "Configurações do item"
+
+#: build/blocks/accordion-item/index.js:1
+msgid "Open by default"
+msgstr "Aberto por padrão"
+
+#: build/blocks/accordion-item/index.js:1
+msgid "Whether this item starts expanded when the page loads."
+msgstr "Se este item começa expandido quando a página carrega."
+
+#: build/blocks/accordion-item/index.js:1
+msgid "Add a question…"
+msgstr "Adicione uma pergunta…"
+
+#: build/blocks/accordion/index.js:1
+msgid "Question 1"
+msgstr "Pergunta 1"
+
+#: build/blocks/accordion/index.js:1
+msgid "Add the answer…"
+msgstr "Adicione a resposta…"
+
+#: build/blocks/accordion/index.js:1
+msgid "Question 2"
+msgstr "Pergunta 2"
+
+#: build/blocks/accordion/index.js:1
+msgid "Question 3"
+msgstr "Pergunta 3"
+
+#: build/blocks/accordion/index.js:1
+msgid "Behavior"
+msgstr "Comportamento"
+
+#: build/blocks/accordion/index.js:1
+msgid "Allow multiple items open at once"
+msgstr "Permitir múltiplos itens abertos ao mesmo tempo"
+
+#: build/blocks/accordion/index.js:1
+msgid "When off, opening an item closes any other open item."
+msgstr "Quando desativado, abrir um item fecha qualquer outro item aberto."
+
+#: build/blocks/alert-box/index.js:1
+msgid "Alert settings"
+msgstr "Configurações do alerta"
+
+#: build/blocks/alert-box/index.js:1
+msgid "Type"
+msgstr "Tipo"
+
+#: build/blocks/alert-box/index.js:1
+msgid "Show icon"
+msgstr "Mostrar ícone"
+
+#: build/blocks/alert-box/index.js:1
+msgid "Heading (optional)…"
+msgstr "Título (opcional)…"
+
+#: build/blocks/alert-box/index.js:1
+msgid "Add your message…"
+msgstr "Adicione sua mensagem…"
+
+#: build/blocks/before-after/index.js:1
+msgid "Square (1:1)"
+msgstr "Quadrado (1:1)"
+
+#: build/blocks/before-after/index.js:1
+msgid "Standard (4:3)"
+msgstr "Padrão (4:3)"
+
+#: build/blocks/before-after/index.js:1
+msgid "Widescreen (16:9)"
+msgstr "Panorâmica (16:9)"
+
+#: build/blocks/before-after/index.js:1
+msgid "Ultrawide (21:9)"
+msgstr "Ultrapanorâmica (21:9)"
+
+#: build/blocks/before-after/index.js:1
+msgid "Photo (3:2)"
+msgstr "Foto (3:2)"
+
+#: build/blocks/before-after/index.js:1
+msgid "Before image"
+msgstr "Imagem de antes"
+
+#: build/blocks/before-after/index.js:1
+#: build/blocks/card/index.js:1
+#: build/blocks/container/index.js:1
+#: build/blocks/cta/index.js:1
+#: build/blocks/team-member/index.js:1
+#: build/blocks/testimonial-item/index.js:1
+#: build/blocks/timeline-item/index.js:1
+msgid "Replace image"
+msgstr "Substituir imagem"
+
+#: build/blocks/before-after/index.js:1
+#: build/blocks/card/index.js:1
+#: build/blocks/container/index.js:1
+#: build/blocks/cta/index.js:1
+#: build/blocks/team-member/index.js:1
+#: build/blocks/testimonial-item/index.js:1
+#: build/blocks/timeline-item/index.js:1
+msgid "Select image"
+msgstr "Selecionar imagem"
+
+#: build/blocks/before-after/index.js:1
+#: build/blocks/card/index.js:1
+#: build/blocks/container/index.js:1
+#: build/blocks/cta/index.js:1
+#: build/blocks/team-member/index.js:1
+#: build/blocks/testimonial-item/index.js:1
+#: build/blocks/timeline-item/index.js:1
+msgid "Remove image"
+msgstr "Remover imagem"
+
+#: build/blocks/before-after/index.js:1
+#: build/blocks/card/index.js:1
+#: build/blocks/team-member/index.js:1
+#: build/blocks/testimonial-item/index.js:1
+#: build/blocks/timeline-item/index.js:1
+msgid "Alt text"
+msgstr "Texto alternativo"
+
+#: build/blocks/before-after/index.js:1
+#: build/blocks/card/index.js:1
+#: build/blocks/team-member/index.js:1
+#: build/blocks/testimonial-item/index.js:1
+#: build/blocks/timeline-item/index.js:1
+msgid "Describe the image for screen readers. Leave empty only if the image is purely decorative."
+msgstr "Descreva a imagem para leitores de tela. Deixe em branco somente se a imagem for puramente decorativa."
+
+#: build/blocks/before-after/index.js:1
+msgid "After image"
+msgstr "Imagem de depois"
+
+#: build/blocks/before-after/index.js:1
+msgid "Settings"
+msgstr "Configurações"
+
+#: build/blocks/before-after/index.js:1
+msgid "Initial handle position"
+msgstr "Posição inicial da alça deslizante"
+
+#: build/blocks/before-after/index.js:1
+msgid "Aspect ratio"
+msgstr "Proporção"
+
+#: build/blocks/before-after/index.js:1
+msgid "Show labels"
+msgstr "Mostrar rótulos"
+
+#: build/blocks/card-grid/index.js:1
+msgid "Fast"
+msgstr "Rápido"
+
+#: build/blocks/card-grid/index.js:1
+msgid "Reliable"
+msgstr "Confiável"
+
+#: build/blocks/card-grid/index.js:1
+msgid "Simple"
+msgstr "Simples"
+
+#: build/blocks/card-grid/index.js:1
+#: build/blocks/stats-counter/index.js:1
+#: build/blocks/team/index.js:1
+#: build/blocks/testimonials/index.js:1
+msgid "Layout"
+msgstr "Layout"
+
+#: build/blocks/card-grid/index.js:1
+#: build/blocks/stats-counter/index.js:1
+#: build/blocks/team/index.js:1
+#: build/blocks/testimonials/index.js:1
+msgid "Columns"
+msgstr "Colunas"
+
+#: build/blocks/card/index.js:1
+#: build/blocks/timeline-item/index.js:1
+msgid "Image"
+msgstr "Imagem"
+
+#: build/blocks/card/index.js:1
+#: build/blocks/cta/index.js:1
+#: build/blocks/pricing-plan/index.js:1
+msgid "Button"
+msgstr "Botão"
+
+#: build/blocks/card/index.js:1
+#: build/blocks/cta/index.js:1
+#: build/blocks/pricing-plan/index.js:1
+msgid "Button URL"
+msgstr "URL do botão"
+
+#: build/blocks/card/index.js:1
+#: build/blocks/cta/index.js:1
+#: build/blocks/pricing-plan/index.js:1
+msgid "Open in new tab"
+msgstr "Abrir em nova aba"
+
+#: build/blocks/card/index.js:1
+msgid "Card title"
+msgstr "Título do cartão"
+
+#: build/blocks/card/index.js:1
+#: build/blocks/pricing-plan/index.js:1
+#: build/blocks/timeline-item/index.js:1
+msgid "Add a short description…"
+msgstr "Adicione uma breve descrição…"
+
+#: build/blocks/card/index.js:1
+#: build/blocks/cta/index.js:1
+#: build/blocks/pricing-plan/index.js:1
+msgid "Add button text…"
+msgstr "Adicione o texto do botão…"
+
+#: build/blocks/container/index.js:1
+msgid "Spacing"
+msgstr "Espaçamento"
+
+#: build/blocks/container/index.js:1
+msgid "Padding top"
+msgstr "Espaçamento superior"
+
+#: build/blocks/container/index.js:1
+msgid "Padding bottom"
+msgstr "Espaçamento inferior"
+
+#: build/blocks/container/index.js:1
+msgid "Padding left"
+msgstr "Espaçamento esquerdo"
+
+#: build/blocks/container/index.js:1
+msgid "Padding right"
+msgstr "Espaçamento direito"
+
+#: build/blocks/container/index.js:1
+#: build/blocks/cta/index.js:1
+#: build/blocks/pricing-plan/index.js:1
+msgid "Background color"
+msgstr "Cor de fundo"
+
+#: build/blocks/container/index.js:1
+#: build/blocks/cta/index.js:1
+msgid "Background image"
+msgstr "Imagem de fundo"
+
+#: build/blocks/container/index.js:1
+msgid "Width"
+msgstr "Largura"
+
+#: build/blocks/container/index.js:1
+msgid "Max width"
+msgstr "Largura máxima"
+
+#: build/blocks/container/index.js:1
+msgid "e.g. 1200px, 80rem, none"
+msgstr "ex.: 1200px, 80rem, none"
+
+#: build/blocks/cta/index.js:1
+msgid "Color settings"
+msgstr "Configurações de cor"
+
+#: build/blocks/cta/index.js:1
+#: build/blocks/pricing-plan/index.js:1
+msgid "Text color"
+msgstr "Cor do texto"
+
+#: build/blocks/cta/index.js:1
+msgid "Button background color"
+msgstr "Cor de fundo do botão"
+
+#: build/blocks/cta/index.js:1
+msgid "Button text color"
+msgstr "Cor do texto do botão"
+
+#: build/blocks/cta/index.js:1
+msgid "Add heading…"
+msgstr "Adicione um título…"
+
+#: build/blocks/cta/index.js:1
+msgid "Add description…"
+msgstr "Adicione uma descrição…"
+
+#: build/blocks/pricing-plan/index.js:1
+msgid "Highlight"
+msgstr "Destaque"
+
+#: build/blocks/pricing-plan/index.js:1
+msgid "Featured plan"
+msgstr "Plano em destaque"
+
+#: build/blocks/pricing-plan/index.js:1
+msgid "Visually highlights this plan among the others."
+msgstr "Destaca visualmente este plano entre os outros."
+
+#: build/blocks/pricing-plan/index.js:1
+msgid "Badge label"
+msgstr "Rótulo do selo"
+
+#: build/blocks/pricing-plan/index.js:1
+msgid "Featured plan colors"
+msgstr "Cores do plano em destaque"
+
+#: build/blocks/pricing-plan/index.js:1
+msgid "Plan name"
+msgstr "Nome do plano"
+
+#: build/blocks/pricing-plan/index.js:1
+msgid "$0"
+msgstr "R$0"
+
+#: build/blocks/pricing-plan/index.js:1
+#: build/blocks/pricing-table/index.js:1
+msgid "/month"
+msgstr "/mês"
+
+#: build/blocks/pricing-table/index.js:1
+msgid "Basic"
+msgstr "Básico"
+
+#: build/blocks/pricing-table/index.js:1
+msgid "For individuals getting started."
+msgstr "Para pessoas que estão começando."
+
+#: build/blocks/pricing-table/index.js:1
+msgid "Choose Basic"
+msgstr "Escolher Básico"
+
+#: build/blocks/pricing-table/index.js:1
+msgid "Pro"
+msgstr "Pro"
+
+#: build/blocks/pricing-table/index.js:1
+msgid "For growing teams."
+msgstr "Para equipes em crescimento."
+
+#: build/blocks/pricing-table/index.js:1
+msgid "Choose Pro"
+msgstr "Escolher Pro"
+
+#: build/blocks/pricing-table/index.js:1
+msgid "Enterprise"
+msgstr "Empresarial"
+
+#: build/blocks/pricing-table/index.js:1
+msgid "For large organizations."
+msgstr "Para grandes organizações."
+
+#: build/blocks/pricing-table/index.js:1
+msgid "Contact Us"
+msgstr "Fale Conosco"
+
+#: build/blocks/stat-item/index.js:1
+msgid "Value"
+msgstr "Valor"
+
+#: build/blocks/stat-item/index.js:1
+msgid "Decimal places"
+msgstr "Casas decimais"
+
+#: build/blocks/stat-item/index.js:1
+msgid "Prefix"
+msgstr "Prefixo"
+
+#: build/blocks/stat-item/index.js:1
+msgid "e.g. \"$\""
+msgstr "ex.: \"R$\""
+
+#: build/blocks/stat-item/index.js:1
+msgid "Suffix"
+msgstr "Sufixo"
+
+#: build/blocks/stat-item/index.js:1
+msgid "e.g. \"+\", \"%\", \"k\""
+msgstr "ex.: \"+\", \"%\", \"k\""
+
+#: build/blocks/stat-item/index.js:1
+msgid "Add a label…"
+msgstr "Adicione um rótulo…"
+
+#: build/blocks/stats-counter/index.js:1
+msgid "Happy Clients"
+msgstr "Clientes Satisfeitos"
+
+#: build/blocks/stats-counter/index.js:1
+msgid "Years in Business"
+msgstr "Anos de Mercado"
+
+#: build/blocks/stats-counter/index.js:1
+msgid "Satisfaction Rate"
+msgstr "Taxa de Satisfação"
+
+#: build/blocks/stats-counter/index.js:1
+msgid "Animation"
+msgstr "Animação"
+
+#: build/blocks/stats-counter/index.js:1
+msgid "Animation duration (ms)"
+msgstr "Duração da animação (ms)"
+
+#: build/blocks/stats-counter/index.js:1
+msgid "How long each number takes to count up once it scrolls into view."
+msgstr "Quanto tempo cada número leva para contar até o valor final assim que entra na tela."
+
+#: build/blocks/tab-item/index.js:1
+msgid "Tab label…"
+msgstr "Rótulo da aba…"
+
+#: build/blocks/tabs/index.js:1
+msgid "Tab 1"
+msgstr "Aba 1"
+
+#: build/blocks/tabs/index.js:1
+msgid "Add content…"
+msgstr "Adicione o conteúdo…"
+
+#: build/blocks/tabs/index.js:1
+msgid "Tab 2"
+msgstr "Aba 2"
+
+#: build/blocks/team-member/index.js:1
+#: build/blocks/testimonial-item/index.js:1
+msgid "Photo"
+msgstr "Foto"
+
+#: build/blocks/team-member/index.js:1
+#: build/blocks/testimonial-item/index.js:1
+msgid "Role"
+msgstr "Cargo"
+
+#: build/blocks/team-member/index.js:1
+msgid "Job title or department, e.g. \"CEO & Founder\""
+msgstr "Cargo ou departamento, ex.: \"CEO e Fundador\""
+
+#: build/blocks/team-member/index.js:1
+msgid "Name"
+msgstr "Nome"
+
+#: build/blocks/team-member/index.js:1
+msgid "Add a short bio…"
+msgstr "Adicione uma breve biografia…"
+
+#: build/blocks/team/index.js:1
+msgid "Alex Morgan"
+msgstr "Alex Morgan"
+
+#: build/blocks/team/index.js:1
+msgid "CEO & Founder"
+msgstr "CEO e Fundador"
+
+#: build/blocks/team/index.js:1
+msgid "Jordan Lee"
+msgstr "Jordan Lee"
+
+#: build/blocks/team/index.js:1
+msgid "Head of Design"
+msgstr "Chefe de Design"
+
+#: build/blocks/team/index.js:1
+msgid "Sam Rivera"
+msgstr "Sam Rivera"
+
+#: build/blocks/team/index.js:1
+msgid "Lead Engineer"
+msgstr "Engenheiro Líder"
+
+#: build/blocks/testimonial-item/index.js:1
+msgid "Author"
+msgstr "Autor"
+
+#: build/blocks/testimonial-item/index.js:1
+msgid "Job title or company, e.g. \"CEO, Acme Inc.\""
+msgstr "Cargo ou empresa, ex.: \"CEO, Acme Ltda.\""
+
+#: build/blocks/testimonial-item/index.js:1
+msgid "Rating"
+msgstr "Avaliação"
+
+#: build/blocks/testimonial-item/index.js:1
+msgid "Show rating"
+msgstr "Mostrar avaliação"
+
+#: build/blocks/testimonial-item/index.js:1
+msgid "Stars"
+msgstr "Estrelas"
+
+#: build/blocks/testimonial-item/index.js:1
+msgid "Add a testimonial…"
+msgstr "Adicione um depoimento…"
+
+#: build/blocks/testimonial-item/index.js:1
+msgid "Author name"
+msgstr "Nome do autor"
+
+#: build/blocks/timeline-item/index.js:1
+msgid "Date or label…"
+msgstr "Data ou rótulo…"
+
+#: build/blocks/timeline-item/index.js:1
+msgid "Title"
+msgstr "Título"
+
+#: build/blocks/timeline/index.js:1
+msgid "Company founded"
+msgstr "Empresa fundada"
+
+#: build/blocks/timeline/index.js:1
+msgid "First 1,000 customers"
+msgstr "Primeiros 1.000 clientes"
+
+#: build/blocks/timeline/index.js:1
+msgid "Series A funding"
+msgstr "Rodada de investimento Série A"
+
+#: build/blocks/accordion-item/block.json
+#: src/blocks/accordion-item/block.json
+msgctxt "block title"
+msgid "Accordion Item"
+msgstr "Item do Acordeão"
+
+#: build/blocks/accordion-item/block.json
+#: src/blocks/accordion-item/block.json
+msgctxt "block description"
+msgid "A single collapsible item within an Accordion block."
+msgstr "Um único item recolhível dentro de um bloco Acordeão."
+
+#: build/blocks/accordion-item/block.json
+#: build/blocks/accordion/block.json
+#: src/blocks/accordion-item/block.json
+#: src/blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "accordion"
+msgstr "acordeão"
+
+#: build/blocks/accordion-item/block.json
+#: build/blocks/accordion/block.json
+#: src/blocks/accordion-item/block.json
+#: src/blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "faq"
+msgstr "faq"
+
+#: build/blocks/accordion-item/block.json
+#: build/blocks/tab-item/block.json
+#: src/blocks/accordion-item/block.json
+#: src/blocks/tab-item/block.json
+msgctxt "block keyword"
+msgid "item"
+msgstr "item"
+
+#: build/blocks/accordion/block.json
+#: src/blocks/accordion/block.json
+msgctxt "block title"
+msgid "Accordion"
+msgstr "Acordeão"
+
+#: build/blocks/accordion/block.json
+#: src/blocks/accordion/block.json
+msgctxt "block description"
+msgid "A list of collapsible accordion items, ideal for FAQs."
+msgstr "Uma lista de itens recolhíveis, ideal para perguntas frequentes."
+
+#: build/blocks/accordion/block.json
+#: src/blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "toggle"
+msgstr "alternar"
+
+#: build/blocks/accordion/block.json
+#: src/blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "collapse"
+msgstr "recolher"
+
+#: build/blocks/alert-box/block.json
+#: src/blocks/alert-box/block.json
+msgctxt "block title"
+msgid "Alert Box"
+msgstr "Caixa de Alerta"
+
+#: build/blocks/alert-box/block.json
+#: src/blocks/alert-box/block.json
+msgctxt "block description"
+msgid "A colored callout for highlighting important information."
+msgstr "Um destaque colorido para realçar informações importantes."
+
+#: build/blocks/alert-box/block.json
+#: src/blocks/alert-box/block.json
+msgctxt "block keyword"
+msgid "alert"
+msgstr "alerta"
+
+#: build/blocks/alert-box/block.json
+#: src/blocks/alert-box/block.json
+msgctxt "block keyword"
+msgid "callout"
+msgstr "destaque"
+
+#: build/blocks/alert-box/block.json
+#: src/blocks/alert-box/block.json
+msgctxt "block keyword"
+msgid "notice"
+msgstr "aviso"
+
+#: build/blocks/alert-box/block.json
+#: src/blocks/alert-box/block.json
+msgctxt "block keyword"
+msgid "warning"
+msgstr "aviso"
+
+#: build/blocks/alert-box/block.json
+#: src/blocks/alert-box/block.json
+msgctxt "block keyword"
+msgid "message"
+msgstr "mensagem"
+
+#: build/blocks/before-after/block.json
+#: src/blocks/before-after/block.json
+msgctxt "block title"
+msgid "Before/After"
+msgstr "Antes/Depois"
+
+#: build/blocks/before-after/block.json
+#: src/blocks/before-after/block.json
+msgctxt "block description"
+msgid "An interactive slider for comparing a before and after image."
+msgstr "Um slider interativo para comparar uma imagem de antes e depois."
+
+#: build/blocks/before-after/block.json
+#: build/blocks/pricing-table/block.json
+#: src/blocks/before-after/block.json
+#: src/blocks/pricing-table/block.json
+msgctxt "block keyword"
+msgid "comparison"
+msgstr "comparação"
+
+#: build/blocks/before-after/block.json
+#: src/blocks/before-after/block.json
+msgctxt "block keyword"
+msgid "slider"
+msgstr "slider"
+
+#: build/blocks/before-after/block.json
+#: src/blocks/before-after/block.json
+msgctxt "block keyword"
+msgid "image"
+msgstr "imagem"
+
+#: build/blocks/card-grid/block.json
+#: src/blocks/card-grid/block.json
+msgctxt "block title"
+msgid "Card Grid"
+msgstr "Grade de Cartões"
+
+#: build/blocks/card-grid/block.json
+#: src/blocks/card-grid/block.json
+msgctxt "block description"
+msgid "A responsive grid of cards, ideal for services, portfolios, or blog teasers."
+msgstr "Uma grade responsiva de cartões, ideal para serviços, portfólios ou chamadas de blog."
+
+#: build/blocks/card-grid/block.json
+#: build/blocks/pricing-table/block.json
+#: src/blocks/card-grid/block.json
+#: src/blocks/pricing-table/block.json
+msgctxt "block keyword"
+msgid "cards"
+msgstr "cartões"
+
+#: build/blocks/card-grid/block.json
+#: build/blocks/stats-counter/block.json
+#: build/blocks/team/block.json
+#: build/blocks/testimonials/block.json
+#: src/blocks/card-grid/block.json
+#: src/blocks/stats-counter/block.json
+#: src/blocks/team/block.json
+#: src/blocks/testimonials/block.json
+msgctxt "block keyword"
+msgid "grid"
+msgstr "grade"
+
+#: build/blocks/card-grid/block.json
+#: src/blocks/card-grid/block.json
+msgctxt "block keyword"
+msgid "gallery"
+msgstr "galeria"
+
+#: build/blocks/card-grid/block.json
+#: src/blocks/card-grid/block.json
+msgctxt "block keyword"
+msgid "portfolio"
+msgstr "portfólio"
+
+#: build/blocks/card/block.json
+#: src/blocks/card/block.json
+msgctxt "block title"
+msgid "Card"
+msgstr "Cartão"
+
+#: build/blocks/card/block.json
+#: src/blocks/card/block.json
+msgctxt "block description"
+msgid "A single card within a Card Grid block."
+msgstr "Um único cartão dentro de um bloco Grade de Cartões."
+
+#: build/blocks/card/block.json
+#: build/blocks/pricing-plan/block.json
+#: src/blocks/card/block.json
+#: src/blocks/pricing-plan/block.json
+msgctxt "block keyword"
+msgid "card"
+msgstr "cartão"
+
+#: build/blocks/card/block.json
+#: build/blocks/stat-item/block.json
+#: build/blocks/team-member/block.json
+#: build/blocks/testimonial-item/block.json
+#: src/blocks/card/block.json
+#: src/blocks/stat-item/block.json
+#: src/blocks/team-member/block.json
+#: src/blocks/testimonial-item/block.json
+msgctxt "block keyword"
+msgid "grid item"
+msgstr "item de grade"
+
+#: build/blocks/container/block.json
+#: src/blocks/container/block.json
+msgctxt "block title"
+msgid "Container"
+msgstr "Contêiner"
+
+#: build/blocks/container/block.json
+#: src/blocks/container/block.json
+msgctxt "block description"
+msgid "Reusable wrapper block with padding, background, and max-width controls. Other blocks (CTA, testimonials, stats) can be nested inside it."
+msgstr "Bloco de encapsulamento reutilizável com controles de espaçamento interno, fundo e largura máxima. Outros blocos (CTA, depoimentos, estatísticas) podem ser aninhados dentro dele."
+
+#: build/blocks/container/block.json
+#: src/blocks/container/block.json
+msgctxt "block keyword"
+msgid "container"
+msgstr "contêiner"
+
+#: build/blocks/container/block.json
+#: src/blocks/container/block.json
+msgctxt "block keyword"
+msgid "wrapper"
+msgstr "encapsulamento"
+
+#: build/blocks/container/block.json
+#: src/blocks/container/block.json
+msgctxt "block keyword"
+msgid "section"
+msgstr "seção"
+
+#: build/blocks/cta/block.json
+#: src/blocks/cta/block.json
+msgctxt "block title"
+msgid "CTA"
+msgstr "CTA"
+
+#: build/blocks/cta/block.json
+#: src/blocks/cta/block.json
+msgctxt "block description"
+msgid "Call-to-action block with heading, description, and a button."
+msgstr "Bloco de chamada para ação com título, descrição e um botão."
+
+#: build/blocks/cta/block.json
+#: src/blocks/cta/block.json
+msgctxt "block keyword"
+msgid "cta"
+msgstr "cta"
+
+#: build/blocks/cta/block.json
+#: src/blocks/cta/block.json
+msgctxt "block keyword"
+msgid "call to action"
+msgstr "chamada para ação"
+
+#: build/blocks/cta/block.json
+#: src/blocks/cta/block.json
+msgctxt "block keyword"
+msgid "button"
+msgstr "botão"
+
+#: build/blocks/pricing-plan/block.json
+#: src/blocks/pricing-plan/block.json
+msgctxt "block title"
+msgid "Pricing Plan"
+msgstr "Plano de Preços"
+
+#: build/blocks/pricing-plan/block.json
+#: src/blocks/pricing-plan/block.json
+msgctxt "block description"
+msgid "A single pricing card within a Pricing Table block."
+msgstr "Um único cartão de preço dentro de um bloco Tabela de Preços."
+
+#: build/blocks/pricing-plan/block.json
+#: build/blocks/pricing-table/block.json
+#: src/blocks/pricing-plan/block.json
+#: src/blocks/pricing-table/block.json
+msgctxt "block keyword"
+msgid "pricing"
+msgstr "preços"
+
+#: build/blocks/pricing-plan/block.json
+#: src/blocks/pricing-plan/block.json
+msgctxt "block keyword"
+msgid "plan"
+msgstr "plano"
+
+#: build/blocks/pricing-table/block.json
+#: src/blocks/pricing-table/block.json
+msgctxt "block title"
+msgid "Pricing Table"
+msgstr "Tabela de Preços"
+
+#: build/blocks/pricing-table/block.json
+#: src/blocks/pricing-table/block.json
+msgctxt "block description"
+msgid "A row of pricing cards for comparing plans."
+msgstr "Uma linha de cartões de preços para comparar planos."
+
+#: build/blocks/pricing-table/block.json
+#: src/blocks/pricing-table/block.json
+msgctxt "block keyword"
+msgid "plans"
+msgstr "planos"
+
+#: build/blocks/stat-item/block.json
+#: src/blocks/stat-item/block.json
+msgctxt "block title"
+msgid "Stat Item"
+msgstr "Item de Estatística"
+
+#: build/blocks/stat-item/block.json
+#: src/blocks/stat-item/block.json
+msgctxt "block description"
+msgid "A single animated statistic within a Stats Counter block."
+msgstr "Uma única estatística animada dentro de um bloco Contador de Estatísticas."
+
+#: build/blocks/stat-item/block.json
+#: src/blocks/stat-item/block.json
+msgctxt "block keyword"
+msgid "stat"
+msgstr "estatística"
+
+#: build/blocks/stat-item/block.json
+#: build/blocks/stats-counter/block.json
+#: src/blocks/stat-item/block.json
+#: src/blocks/stats-counter/block.json
+msgctxt "block keyword"
+msgid "counter"
+msgstr "contador"
+
+#: build/blocks/stat-item/block.json
+#: src/blocks/stat-item/block.json
+msgctxt "block keyword"
+msgid "number"
+msgstr "número"
+
+#: build/blocks/stats-counter/block.json
+#: src/blocks/stats-counter/block.json
+msgctxt "block title"
+msgid "Stats Counter"
+msgstr "Contador de Estatísticas"
+
+#: build/blocks/stats-counter/block.json
+#: src/blocks/stats-counter/block.json
+msgctxt "block description"
+msgid "A responsive grid of animated stats, ideal for building credibility with numbers."
+msgstr "Uma grade responsiva de estatísticas animadas, ideal para construir credibilidade com números."
+
+#: build/blocks/stats-counter/block.json
+#: src/blocks/stats-counter/block.json
+msgctxt "block keyword"
+msgid "stats"
+msgstr "estatísticas"
+
+#: build/blocks/stats-counter/block.json
+#: src/blocks/stats-counter/block.json
+msgctxt "block keyword"
+msgid "numbers"
+msgstr "números"
+
+#: build/blocks/tab-item/block.json
+#: src/blocks/tab-item/block.json
+msgctxt "block title"
+msgid "Tab Item"
+msgstr "Item de Aba"
+
+#: build/blocks/tab-item/block.json
+#: src/blocks/tab-item/block.json
+msgctxt "block description"
+msgid "A single tab within a Tabs block."
+msgstr "Uma única aba dentro de um bloco Abas."
+
+#: build/blocks/tab-item/block.json
+#: src/blocks/tab-item/block.json
+msgctxt "block keyword"
+msgid "tab"
+msgstr "aba"
+
+#: build/blocks/tab-item/block.json
+#: src/blocks/tab-item/block.json
+msgctxt "block keyword"
+msgid "panel"
+msgstr "painel"
+
+#: build/blocks/tabs/block.json
+#: src/blocks/tabs/block.json
+msgctxt "block title"
+msgid "Tabs"
+msgstr "Abas"
+
+#: build/blocks/tabs/block.json
+#: src/blocks/tabs/block.json
+msgctxt "block description"
+msgid "A set of tabs for organizing content into switchable panels."
+msgstr "Um conjunto de abas para organizar conteúdo em painéis alternáveis."
+
+#: build/blocks/tabs/block.json
+#: src/blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabs"
+msgstr "abas"
+
+#: build/blocks/tabs/block.json
+#: src/blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabbed"
+msgstr "com abas"
+
+#: build/blocks/tabs/block.json
+#: src/blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "panels"
+msgstr "painéis"
+
+#: build/blocks/team-member/block.json
+#: src/blocks/team-member/block.json
+msgctxt "block title"
+msgid "Team Member"
+msgstr "Membro da Equipe"
+
+#: build/blocks/team-member/block.json
+#: src/blocks/team-member/block.json
+msgctxt "block description"
+msgid "A single team member card within a Team block."
+msgstr "Um único cartão de membro dentro de um bloco Equipe."
+
+#: build/blocks/team-member/block.json
+#: build/blocks/team/block.json
+#: src/blocks/team-member/block.json
+#: src/blocks/team/block.json
+msgctxt "block keyword"
+msgid "team"
+msgstr "equipe"
+
+#: build/blocks/team-member/block.json
+#: build/blocks/team/block.json
+#: src/blocks/team-member/block.json
+#: src/blocks/team/block.json
+msgctxt "block keyword"
+msgid "staff"
+msgstr "equipe"
+
+#: build/blocks/team-member/block.json
+#: src/blocks/team-member/block.json
+msgctxt "block keyword"
+msgid "person"
+msgstr "pessoa"
+
+#: build/blocks/team/block.json
+#: src/blocks/team/block.json
+msgctxt "block title"
+msgid "Team"
+msgstr "Equipe"
+
+#: build/blocks/team/block.json
+#: src/blocks/team/block.json
+msgctxt "block description"
+msgid "A responsive grid of team member cards, ideal for an \"About us\" or \"Meet the team\" section."
+msgstr "Uma grade responsiva de cartões de membros da equipe, ideal para uma seção \"Sobre nós\" ou \"Conheça a equipe\"."
+
+#: build/blocks/team/block.json
+#: src/blocks/team/block.json
+msgctxt "block keyword"
+msgid "people"
+msgstr "pessoas"
+
+#: build/blocks/testimonial-item/block.json
+#: src/blocks/testimonial-item/block.json
+msgctxt "block title"
+msgid "Testimonial Item"
+msgstr "Item de Depoimento"
+
+#: build/blocks/testimonial-item/block.json
+#: src/blocks/testimonial-item/block.json
+msgctxt "block description"
+msgid "A single testimonial within a Testimonials block."
+msgstr "Um único depoimento dentro de um bloco Depoimentos."
+
+#: build/blocks/testimonial-item/block.json
+#: src/blocks/testimonial-item/block.json
+msgctxt "block keyword"
+msgid "testimonial"
+msgstr "depoimento"
+
+#: build/blocks/testimonial-item/block.json
+#: src/blocks/testimonial-item/block.json
+msgctxt "block keyword"
+msgid "review"
+msgstr "avaliação"
+
+#: build/blocks/testimonial-item/block.json
+#: src/blocks/testimonial-item/block.json
+msgctxt "block keyword"
+msgid "quote"
+msgstr "citação"
+
+#: build/blocks/testimonials/block.json
+#: src/blocks/testimonials/block.json
+msgctxt "block title"
+msgid "Testimonials"
+msgstr "Depoimentos"
+
+#: build/blocks/testimonials/block.json
+#: src/blocks/testimonials/block.json
+msgctxt "block description"
+msgid "A responsive grid of customer testimonials."
+msgstr "Uma grade responsiva de depoimentos de clientes."
+
+#: build/blocks/testimonials/block.json
+#: src/blocks/testimonials/block.json
+msgctxt "block keyword"
+msgid "testimonials"
+msgstr "depoimentos"
+
+#: build/blocks/testimonials/block.json
+#: src/blocks/testimonials/block.json
+msgctxt "block keyword"
+msgid "reviews"
+msgstr "avaliações"
+
+#: build/blocks/testimonials/block.json
+#: src/blocks/testimonials/block.json
+msgctxt "block keyword"
+msgid "quotes"
+msgstr "citações"
+
+#: build/blocks/timeline-item/block.json
+#: src/blocks/timeline-item/block.json
+msgctxt "block title"
+msgid "Timeline Item"
+msgstr "Item da Linha do Tempo"
+
+#: build/blocks/timeline-item/block.json
+#: src/blocks/timeline-item/block.json
+msgctxt "block description"
+msgid "A single event or step within a Timeline block."
+msgstr "Um único evento ou etapa dentro de um bloco Linha do Tempo."
+
+#: build/blocks/timeline-item/block.json
+#: build/blocks/timeline/block.json
+#: src/blocks/timeline-item/block.json
+#: src/blocks/timeline/block.json
+msgctxt "block keyword"
+msgid "timeline"
+msgstr "linha do tempo"
+
+#: build/blocks/timeline-item/block.json
+#: src/blocks/timeline-item/block.json
+msgctxt "block keyword"
+msgid "event"
+msgstr "evento"
+
+#: build/blocks/timeline-item/block.json
+#: src/blocks/timeline-item/block.json
+msgctxt "block keyword"
+msgid "step"
+msgstr "etapa"
+
+#: build/blocks/timeline/block.json
+#: src/blocks/timeline/block.json
+msgctxt "block title"
+msgid "Timeline"
+msgstr "Linha do Tempo"
+
+#: build/blocks/timeline/block.json
+#: src/blocks/timeline/block.json
+msgctxt "block description"
+msgid "A vertical timeline for showing a sequence of events or steps."
+msgstr "Uma linha do tempo vertical para mostrar uma sequência de eventos ou etapas."
+
+#: build/blocks/timeline/block.json
+#: src/blocks/timeline/block.json
+msgctxt "block keyword"
+msgid "history"
+msgstr "histórico"
+
+#: build/blocks/timeline/block.json
+#: src/blocks/timeline/block.json
+msgctxt "block keyword"
+msgid "steps"
+msgstr "etapas"
+
+#: build/blocks/timeline/block.json
+#: src/blocks/timeline/block.json
+msgctxt "block keyword"
+msgid "process"
+msgstr "processo"
