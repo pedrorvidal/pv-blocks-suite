@@ -42,7 +42,9 @@
                     "buttonText": "Choose Pro",
                     "buttonUrl": "#",
                     "isFeatured": true,
-                    "featuredLabel": "Most Popular"
+                    "featuredLabel": "Most Popular",
+                    "featuredBackgroundColor": "#1e1e1e",
+                    "featuredTextColor": "#ffffff"
                 },
                 "innerBlocks": [
                     {

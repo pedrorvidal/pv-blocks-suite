@@ -49,6 +49,14 @@
         "featuredLabel": {
             "type": "string",
             "default": "Most Popular"
+        },
+        "featuredBackgroundColor": {
+            "type": "string",
+            "default": ""
+        },
+        "featuredTextColor": {
+            "type": "string",
+            "default": ""
         }
     },
     "example": {
@@ -59,7 +67,9 @@
             "description": "For growing teams.",
             "buttonText": "Choose Pro",
             "buttonUrl": "#",
-            "isFeatured": true
+            "isFeatured": true,
+            "featuredBackgroundColor": "#1e1e1e",
+            "featuredTextColor": "#ffffff"
         },
         "innerBlocks": [
             {

@@ -135,6 +135,32 @@ final class Pricing_Plan_Render_Test extends WP_UnitTestCase {
 		$this->assertStringNotContainsString( '__featured-badge', $output );
 	}
 
+	public function test_featured_colors_become_inline_styles_when_featured(): void {
+		$output = $this->render_plan(
+			[
+				'isFeatured'              => true,
+				'featuredBackgroundColor' => '#1e1e1e',
+				'featuredTextColor'       => '#ffffff',
+			]
+		);
+
+		$this->assertStringContainsString( 'background-color:#1e1e1e', $output );
+		$this->assertStringContainsString( 'color:#ffffff', $output );
+	}
+
+	public function test_featured_colors_are_ignored_when_not_featured(): void {
+		$output = $this->render_plan(
+			[
+				'isFeatured'              => false,
+				'featuredBackgroundColor' => '#1e1e1e',
+				'featuredTextColor'       => '#ffffff',
+			]
+		);
+
+		$this->assertStringNotContainsString( '#1e1e1e', $output );
+		$this->assertStringNotContainsString( '#ffffff', $output );
+	}
+
 	public function test_plan_name_and_description_allow_safe_html_but_strip_scripts(): void {
 		$output = $this->render_plan(
 			[

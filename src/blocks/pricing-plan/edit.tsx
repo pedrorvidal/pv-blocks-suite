@@ -7,6 +7,8 @@ import {
     HeadingLevelDropdown,
     InnerBlocks,
     RichText,
+    PanelColorSettings,
+    ContrastChecker,
 } from '@wordpress/block-editor';
 import { PanelBody, TextControl, ToggleControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
@@ -28,10 +30,18 @@ export default function Edit({
         buttonOpensInNewTab,
         isFeatured,
         featuredLabel,
+        featuredBackgroundColor,
+        featuredTextColor,
     } = attributes;
 
     const blockProps = useBlockProps({
         className: isFeatured ? 'is-featured' : undefined,
+        style: isFeatured
+            ? {
+                  backgroundColor: featuredBackgroundColor || undefined,
+                  color: featuredTextColor || undefined,
+              }
+            : undefined,
     });
 
     return (
@@ -69,6 +79,38 @@ export default function Edit({
                         />
                     )}
                 </PanelBody>
+
+                {isFeatured && (
+                    <PanelColorSettings
+                        title={__('Featured plan colors', 'pv-blocks-suite')}
+                        colorSettings={[
+                            {
+                                value: featuredBackgroundColor,
+                                onChange: (value?: string) =>
+                                    setAttributes({
+                                        featuredBackgroundColor: value ?? '',
+                                    }),
+                                label: __(
+                                    'Background color',
+                                    'pv-blocks-suite'
+                                ),
+                            },
+                            {
+                                value: featuredTextColor,
+                                onChange: (value?: string) =>
+                                    setAttributes({
+                                        featuredTextColor: value ?? '',
+                                    }),
+                                label: __('Text color', 'pv-blocks-suite'),
+                            },
+                        ]}
+                    >
+                        <ContrastChecker
+                            backgroundColor={featuredBackgroundColor}
+                            textColor={featuredTextColor}
+                        />
+                    </PanelColorSettings>
+                )}
 
                 <PanelBody title={__('Button', 'pv-blocks-suite')}>
                     <TextControl

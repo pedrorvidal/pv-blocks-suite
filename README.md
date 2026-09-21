@@ -47,7 +47,8 @@ A call-to-action block for driving a single, focused action.
 - Rich-text heading (configurable H2–H6 level) and description with
   inline formatting (bold, italic)
 - One button with configurable label, URL, and "open in new tab" (with a
-  screen-reader announcement for the new-tab behavior)
+  screen-reader announcement for the new-tab behavior and a hover
+  animation that works with any button color)
 - Text alignment control (left, center, right, justify)
 - Independent background and text colors for both the block and the
   button, with a built-in contrast warning for accessibility
@@ -84,7 +85,8 @@ A row of pricing cards for comparing plans.
 - The feature list is real `InnerBlocks` — defaults to a native list,
   editable like any other WordPress list
 - "Featured plan" highlight (border/shadow) with a customizable badge
-  label
+  label and an optional background/text color pair (with a contrast
+  warning) just for that card
 - Native padding and border-radius controls
 
 ## Requirements

@@ -15,26 +15,50 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-$plan_name               = (string) ( $attributes['planName'] ?? '' );
-$heading_level           = (int) ( $attributes['headingLevel'] ?? 3 );
-$heading_level           = max( 2, min( 6, $heading_level ) );
-$price                   = (string) ( $attributes['price'] ?? '' );
-$price_period            = (string) ( $attributes['pricePeriod'] ?? '' );
-$description             = (string) ( $attributes['description'] ?? '' );
-$button_text             = (string) ( $attributes['buttonText'] ?? '' );
-$button_url              = (string) ( $attributes['buttonUrl'] ?? '' );
-$button_opens_in_new_tab = (bool) ( $attributes['buttonOpensInNewTab'] ?? false );
-$is_featured             = (bool) ( $attributes['isFeatured'] ?? false );
-$featured_label          = (string) ( $attributes['featuredLabel'] ?? '' );
+$plan_name                 = (string) ( $attributes['planName'] ?? '' );
+$heading_level             = (int) ( $attributes['headingLevel'] ?? 3 );
+$heading_level             = max( 2, min( 6, $heading_level ) );
+$price                     = (string) ( $attributes['price'] ?? '' );
+$price_period              = (string) ( $attributes['pricePeriod'] ?? '' );
+$description               = (string) ( $attributes['description'] ?? '' );
+$button_text               = (string) ( $attributes['buttonText'] ?? '' );
+$button_url                = (string) ( $attributes['buttonUrl'] ?? '' );
+$button_opens_in_new_tab   = (bool) ( $attributes['buttonOpensInNewTab'] ?? false );
+$is_featured               = (bool) ( $attributes['isFeatured'] ?? false );
+$featured_label            = (string) ( $attributes['featuredLabel'] ?? '' );
+$featured_background_color = (string) ( $attributes['featuredBackgroundColor'] ?? '' );
+$featured_text_color       = (string) ( $attributes['featuredTextColor'] ?? '' );
 
-// Unlike `style`/`class`/`id`/`aria-label`, get_block_wrapper_attributes()
-// doesn't merge/omit other extra attributes gracefully for empty values
-// (see the accordion-item `name` attribute gotcha), but `class` IS one of
-// the merge-safe keys, so it's fine to pass it conditionally here.
+// Unlike most other extra attributes, `class` and `style` ARE two of the
+// merge-safe keys get_block_wrapper_attributes() knows how to combine
+// with its own generated class/style (e.g. the native padding/
+// border-radius support), so it's fine to pass them conditionally here
+// (contrast with the accordion-item `name` attribute gotcha: an
+// arbitrary extra attribute like `name` doesn't get this treatment).
 $extra_wrapper_attributes = [];
 
 if ( $is_featured ) {
 	$extra_wrapper_attributes['class'] = 'is-featured';
+
+	$featured_styles = [];
+
+	if ( $featured_background_color ) {
+		$featured_styles['background-color'] = $featured_background_color;
+	}
+
+	if ( $featured_text_color ) {
+		$featured_styles['color'] = $featured_text_color;
+	}
+
+	$featured_style_attr = '';
+
+	foreach ( $featured_styles as $property => $value ) {
+		$featured_style_attr .= sprintf( '%s:%s;', $property, $value );
+	}
+
+	if ( '' !== $featured_style_attr ) {
+		$extra_wrapper_attributes['style'] = $featured_style_attr;
+	}
 }
 
 $wrapper_attributes = get_block_wrapper_attributes( $extra_wrapper_attributes );

@@ -31,6 +31,8 @@ export interface PricingPlanAttributes {
     buttonOpensInNewTab: boolean;
     isFeatured: boolean;
     featuredLabel: string;
+    featuredBackgroundColor: string;
+    featuredTextColor: string;
     style?: PricingPlanBlockSupportsStyle;
     // BlockEditProps<Attrs> / BlockConfiguration<Attrs> require Attrs to
     // satisfy Record<string, unknown>.
