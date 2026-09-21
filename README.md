@@ -214,18 +214,15 @@ A responsive grid of team member cards, ideal for "About us" and
 
 ## Installation
 
-1. Copy (or clone) this repository into `wp-content/plugins/pv-blocks-suite`
-   on your WordPress installation.
-2. Install dependencies and build the production assets:
+### From a release (recommended)
 
-   ```bash
-   composer install --no-dev
-   npm install
-   npm run build
-   ```
-
-3. Activate **PV Blocks Suite** from the WordPress admin's Plugins screen,
-   or via WP-CLI:
+1. Download the latest `pv-blocks-suite-*.zip` from the
+   [Releases page](https://github.com/pedrorvidal/pv-blocks-suite/releases/latest) —
+   it ships pre-built, ready to install.
+2. In the WordPress admin, go to **Plugins → Add New Plugin → Upload
+   Plugin** and upload the zip (or extract it into
+   `wp-content/plugins/` manually).
+3. Activate **PV Blocks Suite** from the Plugins screen, or via WP-CLI:
 
    ```bash
    wp plugin activate pv-blocks-suite
@@ -233,6 +230,20 @@ A responsive grid of team member cards, ideal for "About us" and
 
 Blocks appear in the block inserter under their respective categories —
 no further configuration is required.
+
+### From source (for contributors)
+
+Cloning the repository directly gets you the source only — `build/`
+and `vendor/` are generated, not committed, so the plugin won't run
+until you build them:
+
+```bash
+composer install --no-dev
+npm install
+npm run build
+```
+
+Then activate the plugin as above.
 
 ## Translations
 
