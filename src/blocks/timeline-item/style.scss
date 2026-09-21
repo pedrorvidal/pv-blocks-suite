@@ -1,0 +1,57 @@
+.wp-block-pv-blocks-suite-timeline-item {
+    box-sizing: border-box;
+    position: relative;
+    list-style: none;
+    padding: 0 0 2rem 2rem;
+
+    // The connecting vertical line: each item draws its own full-height
+    // segment (top:0 to bottom:0), and since items stack directly with
+    // no margin between them, consecutive segments join into one
+    // continuous line with no visible seams.
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: calc(0.5rem - 1px);
+        width: 2px;
+        background-color: #e0e0e0;
+    }
+
+    &:last-child {
+        padding-bottom: 0;
+
+        // No trailing line past the last item.
+        &::before {
+            display: none;
+        }
+    }
+
+    &__dot {
+        position: absolute;
+        top: 0.25rem;
+        left: 0;
+        box-sizing: border-box;
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        background-color: #1e1e1e;
+        border: 2px solid #fff;
+    }
+
+    &__date {
+        display: block;
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: #757575;
+        margin: 0 0 0.25rem;
+    }
+
+    &__heading {
+        margin: 0 0 0.25rem;
+    }
+
+    &__description {
+        margin: 0;
+    }
+}

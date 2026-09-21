@@ -1,0 +1,44 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "pv-blocks-suite/timeline-item",
+    "title": "Timeline Item",
+    "category": "pv-blocks-suite",
+    "icon": "marker",
+    "description": "A single event or step within a Timeline block.",
+    "keywords": ["timeline", "event", "step"],
+    "textdomain": "pv-blocks-suite",
+    "parent": ["pv-blocks-suite/timeline"],
+    "attributes": {
+        "date": {
+            "type": "string",
+            "default": ""
+        },
+        "heading": {
+            "type": "string",
+            "default": ""
+        },
+        "headingLevel": {
+            "type": "number",
+            "default": 3
+        },
+        "description": {
+            "type": "string",
+            "default": ""
+        }
+    },
+    "example": {
+        "attributes": {
+            "date": "2024",
+            "heading": "Series A funding",
+            "description": "Raised funding to accelerate growth."
+        }
+    },
+    "supports": {
+        "html": false,
+        "anchor": true
+    },
+    "editorScript": "file:./index.js",
+    "style": "file:./style-index.css",
+    "render": "file:./render.php"
+}

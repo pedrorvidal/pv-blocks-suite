@@ -1,0 +1,48 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "pv-blocks-suite/timeline",
+    "title": "Timeline",
+    "category": "pv-blocks-suite",
+    "icon": "clock",
+    "description": "A vertical timeline for showing a sequence of events or steps.",
+    "keywords": ["timeline", "history", "steps", "process"],
+    "textdomain": "pv-blocks-suite",
+    "attributes": {},
+    "example": {
+        "innerBlocks": [
+            {
+                "name": "pv-blocks-suite/timeline-item",
+                "attributes": {
+                    "date": "2022",
+                    "heading": "Company founded",
+                    "description": "Started with a small team and a big idea."
+                }
+            },
+            {
+                "name": "pv-blocks-suite/timeline-item",
+                "attributes": {
+                    "date": "2023",
+                    "heading": "First 1,000 customers",
+                    "description": "Reached a major milestone."
+                }
+            },
+            {
+                "name": "pv-blocks-suite/timeline-item",
+                "attributes": {
+                    "date": "2024",
+                    "heading": "Series A funding",
+                    "description": "Raised funding to accelerate growth."
+                }
+            }
+        ]
+    },
+    "supports": {
+        "align": ["wide", "full"],
+        "html": false,
+        "anchor": true
+    },
+    "editorScript": "file:./index.js",
+    "style": "file:./style-index.css",
+    "render": "file:./render.php"
+}
