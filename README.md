@@ -157,6 +157,25 @@ proof.
   `<div>`s, for correctly-structured, accessible markup
 - Native padding and border-radius controls
 
+### Stats Counter
+
+A grid of animated stat counters, ideal for social proof ("500+
+Clients", "20 Years", "99% Satisfaction").
+
+- Any number of stats, added, reordered, duplicated, or removed through
+  the standard block toolbar
+- Configurable column count (2–4), responsive down to a single column on
+  small screens
+- Each stat: a target number with optional prefix/suffix and decimal
+  places, and a label
+- Numbers animate counting up from zero the first time they scroll into
+  view, with a shared, configurable animation duration for the whole
+  grid; the real final value is always rendered server-side first, so
+  the correct number is visible even if JavaScript never loads
+- Respects the visitor's reduced-motion preference — counters display
+  their final value immediately instead of animating
+- Native padding and border-radius controls
+
 ## Requirements
 
 - PHP 8.2 or later

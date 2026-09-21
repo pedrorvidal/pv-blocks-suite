@@ -1,0 +1,62 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "pv-blocks-suite/stat-item",
+    "title": "Stat Item",
+    "category": "pv-blocks-suite",
+    "icon": "chart-line",
+    "description": "A single animated statistic within a Stats Counter block.",
+    "keywords": ["stat", "counter", "number", "grid item"],
+    "textdomain": "pv-blocks-suite",
+    "parent": ["pv-blocks-suite/stats-counter"],
+    "attributes": {
+        "value": {
+            "type": "number",
+            "default": 100
+        },
+        "decimals": {
+            "type": "number",
+            "default": 0
+        },
+        "prefix": {
+            "type": "string",
+            "default": ""
+        },
+        "suffix": {
+            "type": "string",
+            "default": "+"
+        },
+        "label": {
+            "type": "string",
+            "default": ""
+        }
+    },
+    "usesContext": ["pv-blocks-suite/animationDuration"],
+    "example": {
+        "attributes": {
+            "value": 500,
+            "suffix": "+",
+            "label": "Happy Clients"
+        }
+    },
+    "supports": {
+        "html": false,
+        "anchor": true,
+        "spacing": {
+            "padding": true,
+            "__experimentalDefaultControls": {
+                "padding": true
+            }
+        },
+        "__experimentalBorder": {
+            "radius": true,
+            "__experimentalDefaultControls": {
+                "radius": true
+            }
+        }
+    },
+    "editorScript": "file:./index.js",
+    "style": "file:./style-index.css",
+    "viewScriptModule": "file:./view.js",
+    "render": "file:./render.php"
+}

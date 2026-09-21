@@ -1,0 +1,23 @@
+.wp-block-pv-blocks-suite-stat-item {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem;
+
+    &__value {
+        font-size: 2.5rem;
+        font-weight: 700;
+        line-height: 1.2;
+    }
+
+    &__label {
+        margin: 0.5rem 0 0;
+        font-size: 0.9375rem;
+        // Dims whatever color is actually in effect rather than replacing
+        // it with a fixed gray — see docs/PROGRESS.md's "hardcoded color
+        // beats inherited color" gotcha for the full reasoning.
+        opacity: 0.7;
+    }
+}

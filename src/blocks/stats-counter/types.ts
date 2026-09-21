@@ -1,0 +1,7 @@
+export interface StatsCounterAttributes {
+    columns: number;
+    animationDuration: number;
+    // BlockEditProps<Attrs> / BlockConfiguration<Attrs> require Attrs to
+    // satisfy Record<string, unknown>.
+    [key: string]: unknown;
+}

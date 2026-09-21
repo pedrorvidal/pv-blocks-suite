@@ -1,0 +1,63 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "pv-blocks-suite/stats-counter",
+    "title": "Stats Counter",
+    "category": "pv-blocks-suite",
+    "icon": "chart-bar",
+    "description": "A responsive grid of animated stats, ideal for building credibility with numbers.",
+    "keywords": ["stats", "counter", "numbers", "grid"],
+    "textdomain": "pv-blocks-suite",
+    "attributes": {
+        "columns": {
+            "type": "number",
+            "default": 3
+        },
+        "animationDuration": {
+            "type": "number",
+            "default": 2000
+        }
+    },
+    "providesContext": {
+        "pv-blocks-suite/animationDuration": "animationDuration"
+    },
+    "example": {
+        "attributes": {
+            "columns": 3
+        },
+        "innerBlocks": [
+            {
+                "name": "pv-blocks-suite/stat-item",
+                "attributes": {
+                    "value": 500,
+                    "suffix": "+",
+                    "label": "Happy Clients"
+                }
+            },
+            {
+                "name": "pv-blocks-suite/stat-item",
+                "attributes": {
+                    "value": 20,
+                    "suffix": "",
+                    "label": "Years in Business"
+                }
+            },
+            {
+                "name": "pv-blocks-suite/stat-item",
+                "attributes": {
+                    "value": 99,
+                    "suffix": "%",
+                    "label": "Satisfaction Rate"
+                }
+            }
+        ]
+    },
+    "supports": {
+        "align": ["wide", "full"],
+        "html": false,
+        "anchor": true
+    },
+    "editorScript": "file:./index.js",
+    "style": "file:./style-index.css",
+    "render": "file:./render.php"
+}
