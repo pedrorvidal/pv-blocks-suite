@@ -103,6 +103,19 @@ teasers.
   screen-reader announcement)
 - Native padding and border-radius controls
 
+### Alert Box
+
+A colored callout for highlighting important information.
+
+- Four semantic types — info, success, warning, error — each with a
+  fixed, accessible color pair and its own icon, so meaning stays
+  consistent everywhere the block is used
+- Optional heading and a message
+- Icon can be toggled off; a screen-reader-only label always announces
+  the alert's type regardless, since color and icon alone aren't
+  accessible information
+- Native padding and border-radius controls
+
 ## Requirements
 
 - PHP 8.2 or later

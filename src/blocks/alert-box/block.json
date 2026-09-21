@@ -1,0 +1,56 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "pv-blocks-suite/alert-box",
+    "title": "Alert Box",
+    "category": "pv-blocks-suite",
+    "icon": "warning",
+    "description": "A colored callout for highlighting important information.",
+    "keywords": ["alert", "callout", "notice", "warning", "message"],
+    "textdomain": "pv-blocks-suite",
+    "attributes": {
+        "variant": {
+            "type": "string",
+            "default": "info"
+        },
+        "heading": {
+            "type": "string",
+            "default": ""
+        },
+        "message": {
+            "type": "string",
+            "default": ""
+        },
+        "showIcon": {
+            "type": "boolean",
+            "default": true
+        }
+    },
+    "example": {
+        "attributes": {
+            "variant": "warning",
+            "heading": "Heads up",
+            "message": "This action cannot be undone."
+        }
+    },
+    "supports": {
+        "align": ["wide", "full"],
+        "html": false,
+        "anchor": true,
+        "spacing": {
+            "padding": true,
+            "__experimentalDefaultControls": {
+                "padding": true
+            }
+        },
+        "__experimentalBorder": {
+            "radius": true,
+            "__experimentalDefaultControls": {
+                "radius": true
+            }
+        }
+    },
+    "editorScript": "file:./index.js",
+    "style": "file:./style-index.css",
+    "render": "file:./render.php"
+}

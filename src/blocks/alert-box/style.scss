@@ -1,0 +1,83 @@
+.wp-block-pv-blocks-suite-alert-box {
+    box-sizing: border-box;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1rem 1.25rem;
+    border: 1px solid;
+    border-left-width: 4px;
+    border-radius: 4px;
+
+    // Semantic variants, not free-form colors (deliberate — see
+    // PROGRESS.md's "alert-box" note): a fixed, tested palette per type
+    // means "red = error" stays consistent everywhere this block is
+    // used, and there's no risk of a user picking a low-contrast
+    // combination the way a free color picker would allow.
+    &.is-info {
+        background-color: #cff4fc;
+        border-color: #9eeaf9;
+        color: #055160;
+    }
+
+    &.is-success {
+        background-color: #d1e7dd;
+        border-color: #a3cfbb;
+        color: #0f5132;
+    }
+
+    &.is-warning {
+        background-color: #fff3cd;
+        border-color: #ffe69c;
+        color: #664d03;
+    }
+
+    &.is-error {
+        background-color: #f8d7da;
+        border-color: #f1aeb5;
+        color: #842029;
+    }
+
+    &__icon {
+        flex-shrink: 0;
+        width: 1.25rem;
+        height: 1.25rem;
+        margin-top: 0.125rem;
+
+        svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__content {
+        flex: 1;
+        min-width: 0;
+    }
+
+    &__heading {
+        display: block;
+        font-weight: 700;
+        margin: 0 0 0.25rem;
+    }
+
+    &__message {
+        margin: 0;
+    }
+
+    // Standard visually-hidden technique: content stays in the accessible
+    // name/DOM for screen readers but is clipped to 1px and removed from
+    // visual flow. Not reusing a theme's `.screen-reader-text` since we
+    // can't guarantee every theme defines it (see cta/style.scss).
+    &__visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+    }
+}
