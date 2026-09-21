@@ -3,8 +3,8 @@
     "version": "0.1.0",
     "description": "A set of Gutenberg blocks to streamline content creation.",
     "scripts": {
-        "build": "wp-scripts build",
-        "start": "wp-scripts start",
+        "build": "wp-scripts build --experimental-modules",
+        "start": "wp-scripts start --experimental-modules",
         "env:start": "wp-env start",
         "env:start:tests": "wp-env start --config .wp-env.tests.json",
         "env:stop": "wp-env stop",
@@ -29,6 +29,7 @@
         "@wordpress/components": "^40.1.0",
         "@wordpress/element": "^8.7.0",
         "@wordpress/i18n": "^6.28.0",
+        "@wordpress/interactivity": "^6.55.0",
         "@wordpress/scripts": "^30.11.0",
         "typescript": "^7.0.2"
     },

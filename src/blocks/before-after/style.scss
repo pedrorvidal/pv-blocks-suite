@@ -1,0 +1,121 @@
+.wp-block-pv-blocks-suite-before-after {
+    box-sizing: border-box;
+
+    &__stage {
+        position: relative;
+        overflow: hidden;
+        // Drag-friendliness on touch devices and while dragging with a
+        // mouse: avoids the browser's default touch-scroll/text-selection
+        // behavior without needing event.preventDefault() in view.ts.
+        touch-action: none;
+        user-select: none;
+    }
+
+    &__image {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        // The before image and the after-wrap's own image share the exact
+        // same box, so both need to ignore the theme's max-width: 100%
+        // constraint some themes apply to editor content images.
+        max-width: none;
+    }
+
+    &__after-wrap {
+        position: absolute;
+        inset: 0;
+        // clip-path is set inline (initialPosition, then reactively via
+        // data-wp-style--clip-path once the Interactivity API hydrates).
+    }
+
+    &__label {
+        position: absolute;
+        top: 0.75rem;
+        padding: 0.25rem 0.75rem;
+        background-color: rgb(0 0 0 / 60%);
+        color: #fff;
+        font-size: 0.875rem;
+        line-height: 1.4;
+        border-radius: 4px;
+        pointer-events: none;
+
+        &--before {
+            left: 0.75rem;
+        }
+
+        &--after {
+            right: 0.75rem;
+        }
+    }
+
+    &__handle {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 0;
+        // Centers the 2px line and the grip on the handle's own `left`
+        // position, rather than needing the `left` value itself to
+        // account for half the handle's width.
+        transform: translateX(-50%);
+        cursor: ew-resize;
+        outline: none;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 2px;
+            transform: translateX(-50%);
+            background-color: #fff;
+            box-shadow: 0 0 4px rgb(0 0 0 / 40%);
+        }
+
+        // outline is suppressed above and reinstated here, scoped to
+        // :focus-visible only, so a mouse-initiated drag doesn't show a
+        // focus ring but keyboard (Tab) navigation still gets a clearly
+        // visible one — same pattern as `cta`'s button and
+        // `accordion-item`'s summary.
+        &:focus-visible &-grip {
+            outline: 2px solid #fff;
+            outline-offset: 2px;
+        }
+
+        &-grip {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 2.5rem;
+            height: 2.5rem;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            background-color: #fff;
+            box-shadow: 0 0 4px rgb(0 0 0 / 40%);
+
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                width: 0;
+                height: 0;
+                border-top: 6px solid transparent;
+                border-bottom: 6px solid transparent;
+                transform: translateY(-50%);
+            }
+
+            &::before {
+                left: 0.5rem;
+                border-right: 7px solid #1e1e1e;
+            }
+
+            &::after {
+                right: 0.5rem;
+                border-left: 7px solid #1e1e1e;
+            }
+        }
+    }
+}

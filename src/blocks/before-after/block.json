@@ -1,0 +1,77 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "pv-blocks-suite/before-after",
+    "title": "Before/After",
+    "category": "pv-blocks-suite",
+    "icon": "image-flip-horizontal",
+    "description": "An interactive slider for comparing a before and after image.",
+    "keywords": ["comparison", "slider", "image"],
+    "textdomain": "pv-blocks-suite",
+    "attributes": {
+        "beforeImageUrl": {
+            "type": "string",
+            "default": ""
+        },
+        "beforeImageAlt": {
+            "type": "string",
+            "default": ""
+        },
+        "afterImageUrl": {
+            "type": "string",
+            "default": ""
+        },
+        "afterImageAlt": {
+            "type": "string",
+            "default": ""
+        },
+        "beforeLabel": {
+            "type": "string",
+            "default": "Before"
+        },
+        "afterLabel": {
+            "type": "string",
+            "default": "After"
+        },
+        "showLabels": {
+            "type": "boolean",
+            "default": true
+        },
+        "initialPosition": {
+            "type": "number",
+            "default": 50
+        },
+        "aspectRatio": {
+            "type": "string",
+            "default": "16:9"
+        }
+    },
+    "example": {
+        "attributes": {
+            "beforeLabel": "Before",
+            "afterLabel": "After",
+            "initialPosition": 50,
+            "aspectRatio": "16:9"
+        }
+    },
+    "supports": {
+        "html": false,
+        "anchor": true,
+        "spacing": {
+            "padding": true,
+            "__experimentalDefaultControls": {
+                "padding": true
+            }
+        },
+        "__experimentalBorder": {
+            "radius": true,
+            "__experimentalDefaultControls": {
+                "radius": true
+            }
+        }
+    },
+    "editorScript": "file:./index.js",
+    "style": "file:./style-index.css",
+    "viewScriptModule": "file:./view.js",
+    "render": "file:./render.php"
+}

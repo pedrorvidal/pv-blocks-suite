@@ -127,6 +127,20 @@ A vertical timeline for showing a sequence of events or steps.
 - Each event: an optional image with editable alt text, a date or label,
   a heading (configurable H2–H6), and a description
 
+### Before/After
+
+An interactive slider for comparing a before and after image.
+
+- Before and after images, each with editable alt text
+- Move the slider by dragging the handle, clicking anywhere on the image,
+  or using the arrow keys — fully keyboard-accessible with a proper ARIA
+  slider role
+- Configurable initial position and aspect ratio (1:1, 4:3, 16:9, 21:9, 3:2)
+- Optional, editable "before"/"after" labels
+- Built on the native WordPress Interactivity API — no page reload, no
+  custom framework
+- Native padding and border-radius controls
+
 ## Requirements
 
 - PHP 8.2 or later
