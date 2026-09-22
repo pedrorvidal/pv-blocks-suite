@@ -18,7 +18,7 @@
  * @var WP_Block              $block     Block instance; carries context provided by the parent stats-counter.
  */
 
-declare( strict_types=1 );
+declare( strict_types = 1 );
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;

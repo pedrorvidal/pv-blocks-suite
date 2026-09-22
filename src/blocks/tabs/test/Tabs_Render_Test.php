@@ -10,7 +10,7 @@
  * @package PV\BlocksSuite
  */
 
-declare( strict_types=1 );
+declare( strict_types = 1 );
 
 final class Tabs_Render_Test extends WP_UnitTestCase {
 

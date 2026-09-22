@@ -38,7 +38,7 @@
  * @var WP_Block              $block     Block instance.
  */
 
-declare( strict_types=1 );
+declare( strict_types = 1 );
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
