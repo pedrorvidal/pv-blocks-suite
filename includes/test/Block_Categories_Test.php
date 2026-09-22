@@ -5,7 +5,7 @@
  * @package PV\BlocksSuite
  */
 
-declare( strict_types=1 );
+declare( strict_types = 1 );
 
 final class Block_Categories_Test extends WP_UnitTestCase {
 

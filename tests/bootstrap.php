@@ -13,7 +13,7 @@
  * @package PV\BlocksSuite
  */
 
-declare( strict_types=1 );
+declare( strict_types = 1 );
 
 $plugin_root    = dirname( __DIR__ );
 $wp_phpunit_dir = $plugin_root . '/vendor/wp-phpunit/wp-phpunit';

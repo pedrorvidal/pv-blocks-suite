@@ -21,7 +21,7 @@
  * @var WP_Block              $block     Block instance; used to read child attributes directly.
  */
 
-declare( strict_types=1 );
+declare( strict_types = 1 );
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;

@@ -8,7 +8,7 @@
  * @package PV\BlocksSuite
  */
 
-declare( strict_types=1 );
+declare( strict_types = 1 );
 
 if ( ! defined( 'PV_BLOCKS_SUITE_DIR' ) ) {
 	define( 'PV_BLOCKS_SUITE_DIR', __DIR__ . '/' );

@@ -7,6 +7,8 @@
  * License: GPL v2 or later
  * Text Domain: pv-blocks-suite
  * Requires PHP: 8.2
+ *
+ * @package PV\BlocksSuite
  */
 
 declare( strict_types = 1 );
