@@ -59,7 +59,12 @@ $wrapper_attributes = get_block_wrapper_attributes( [ 'class' => 'is-' . $varian
 		</span>
 	<?php endif; ?>
 
-	<span class="wp-block-pv-blocks-suite-alert-box__visually-hidden"><?php echo esc_html( $variant_labels[ $variant ] . ': ' ); ?></span>
+	<span class="wp-block-pv-blocks-suite-alert-box__visually-hidden">
+		<?php
+		/* translators: %s: alert type label (Info, Success, Warning, Error). */
+		echo esc_html( sprintf( __( '%s: ', 'pv-blocks-suite' ), $variant_labels[ $variant ] ) );
+		?>
+	</span>
 
 	<div class="wp-block-pv-blocks-suite-alert-box__content">
 		<?php if ( $heading ) : ?>
