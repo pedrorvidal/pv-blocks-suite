@@ -11,6 +11,10 @@ declare( strict_types=1 );
 
 namespace PV\BlocksSuite;
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Adds the `pv-blocks-suite` category via the `block_categories_all`
  * filter, positioned right after whichever category WordPress core lists

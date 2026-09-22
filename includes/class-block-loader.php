@@ -10,6 +10,10 @@ declare( strict_types=1 );
 
 namespace PV\BlocksSuite;
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Scans src/blocks/*\/block.json to discover blocks, then registers each
  * one using the compiled assets in the matching build/blocks/{slug}/
