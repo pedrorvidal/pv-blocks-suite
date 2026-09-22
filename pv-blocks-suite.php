@@ -2,11 +2,15 @@
 /**
  * Plugin Name: PV Blocks Suite
  * Description: A set of Gutenberg blocks to streamline content creation.
- * Version: 1.0.0
+ * Version: 1.0.1
+ * Requires at least: 6.5
+ * Requires PHP: 8.2
+ * Tested up to: 7.1.1
  * Author: Pedro Vidal
  * License: GPL v2 or later
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: pv-blocks-suite
- * Requires PHP: 8.2
+ * Domain Path: /languages
  */
 
 declare( strict_types = 1 );
